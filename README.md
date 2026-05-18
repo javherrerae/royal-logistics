@@ -3,6 +3,22 @@
 Nota Acxel: Quizás sea buena idea crear un archivo con Changelog para dejar el Readme limpio
 
 ---------------------- CHANGELOG -------------------------
+[17-05-2027] Actualización v1.0:
+El sistema se encuentra funcional en su estado base. Se esperan futuras integraciones de más microservicios (principalmente el microservicio de movimiento y el de api-gateway), junto con la finalización de la gestión de usuarios y autenticación.
+
+Nota de integración: Tras aplicar esta actualización, se ejecutaron con éxito el flujo de pruebas en Postman, logrando que los microservicios validen información en bases de datos externas a las suyas. Además de lograr la inicialización reactiva y en cascada del registro de cero unidades dentro del inventario aislado de stock.
+
+Nuevo:
+- Actualización de microservicios producto, anden, camion, recepcion, factura, desconsolidacion y warehouse.
+- Finalización de integración de inter-conexión de microservicios mediante FeignClient.
+
+Corrección de errores:
+- Downgrade de la propiedad 'java.version' de Java 25 a Java 21 en pom.xml de camion, creacion-usuario, recepcion, factura,   desconsolidacion y warehouse.
+- Se añadió la notacion @Service omitida en la clase AndenService.
+- Fix de bugs generales de JavaBeans (Discrepancia entre mayúsculas y minúsculas en JPA).
+
+
+
 
 [16-05-2026] Actualización v0.3.6:
 - Actualización del microservicio `Producto`:
