@@ -5,6 +5,7 @@ Nota Acxel: Quizás sea buena idea crear un archivo con Changelog para dejar el 
 ---------------------- CHANGELOG -------------------------
 
 [17-05-2027] Actualización v1.0:
+
 El sistema se encuentra funcional en su estado base. Se esperan futuras integraciones de más microservicios (principalmente el microservicio de movimiento y el de api-gateway), junto con la finalización de la gestión de usuarios y autenticación.
 
 Nota de integración: Tras aplicar esta actualización, se ejecutaron con éxito el flujo de pruebas en Postman, logrando que los microservicios validen información en bases de datos externas a las suyas. Además de lograr la inicialización reactiva y en cascada del registro de cero unidades dentro del inventario aislado de stock.
