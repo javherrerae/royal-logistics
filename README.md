@@ -150,7 +150,10 @@ Oracle SQL Data Modeler
 </li>
 
 <li>
-Descargar y extraer la carpeta <b>modelado microservicios</b>
+Descargar y extraer la carpeta 
+<a href="./modelado%20microservicios">
+<b>modelado microservicios</b>
+</a>
 </li>
 
 <li>
