@@ -205,7 +205,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 ---
 <h2 style="color:#2563eb;">‚öôÔ∏è Documentaci®Æn y Colecci®Æn</h2>
-### Microservicio de Productos ("/api/productos")
+### Microservicio de Productos
 
 ** GET ** `/api/productos`: Lista todos los productos disponibles
 
@@ -225,6 +225,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
     ```
 
   </details>
+---
 
 ** GET ** `/api/productos/sku/{sku}`: Busca productos por c®Ædigo de SKU ®≤nico
 
@@ -241,6 +242,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
       }
       ```
     </details>
+---
 
 ** POST ** `/api/productos`: Registrar un nuevo producto
 
@@ -256,7 +258,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
     }
     ```
   </details>
-
+---
 ** GET ** `/api/productos/categoria/{categoria}`: Buscar producto por categor®™a
 
 ** GET ** `/api/productos/desconsolidacion/{idDesconsolidacion}`: Buscar producto por id de desconsolidaci®Æn
