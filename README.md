@@ -220,6 +220,8 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 * **GET** `/api/productos` - Lista todos los productos disponibles.
 
+* ** POST ** 
+
 <details>
 <summary><b>▶ Ver JSON + GET</b></summary>
 
@@ -235,8 +237,11 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 ]
 ```
 </details>
+
 * **GET** /api/productos/sku/{sku} - Busca productos por código de SKU único.
 
+<details>
+```json
 {
   "id": 1,
   "sku": "PROD-10023",
@@ -244,8 +249,13 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
   "categoria": "Almacenamiento",
   "idDesconsolidacion": 12
 }
+```
+</details>
 
 * ** GET ** `/api/productos/categoria/{categoria}`: Buscar producto por categoría
+
+<details>
+```json
 {
   "id": 1,
   "sku": "PROD-10023",
@@ -253,13 +263,14 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
   "categoria": "Almacenamiento",
   "idDesconsolidacion": 12
 }
+```
+</details>
 
 * ** GET ** `/api/productos/desconsolidacion/{idDesconsolidacion}`: Buscar producto por id de desconsolidación
 
 * ** GET ** `/api/productos/desconsolidacion/{idDesconsolidacion}`: Buscar producto por id de desconsolidación
 
 * ** GET ** `/api/productos/nombre/{nombreProducto}`: Buscar producto por nombre
-</details>
 
 * ** POST ** 
 ** DELETE ** `/api/productos/{sku}`: Elimina un producto filtrado por el código sku
