@@ -50,33 +50,22 @@ Todo esto mediante arquitectura de microservicios utilizando Spring Boot y APIs 
 
 <pre>
 Agendamiento de recepciÃ³n
-        â†“
-Llegada de camiÃ³n
-        â†“
-AsignaciÃ³n de andÃ©n
-        â†“
-RecepciÃ³n de factura
-        â†“
-Descarga de pallets / cajas
-        â†“
-DesconsolidaciÃ³n
-        â†“
-Registro de productos
-        â†“
-AsignaciÃ³n de ubicaciÃ³n
-        â†“
-Warehouse
-        â†“
-ActualizaciÃ³n de stock
-        â†“
-Movimientos internos
-        â†“
-Seguimiento y trazabilidad
+        â†?Llegada de camiÃ³n
+        â†?AsignaciÃ³n de andÃ©n
+        â†?RecepciÃ³n de factura
+        â†?Descarga de pallets / cajas
+        â†?DesconsolidaciÃ³n
+        â†?Registro de productos
+        â†?AsignaciÃ³n de ubicaciÃ³n
+        â†?Warehouse
+        â†?ActualizaciÃ³n de stock
+        â†?Movimientos internos
+        â†?Seguimiento y trazabilidad
 </pre>
 
 ---
 
-<h2 style="color:#2563eb;">ğŸ—ï¸ Arquitectura de microservicios</h2>
+<h2 style="color:#2563eb;">ğŸ—ï¸?Arquitectura de microservicios</h2>
 
 <p>
 El sistema fue diseÃ±ado bajo arquitectura de microservicios, donde cada mÃ³dulo cumple una responsabilidad especÃ­fica dentro de la cadena logÃ­stica.
@@ -134,7 +123,7 @@ Cada microservicio posee:
 
 ---
 
-<h2 style="color:#2563eb;">ğŸ—„ï¸ Modelado de base de datos</h2>
+<h2 style="color:#2563eb;">ğŸ—„ï¸?Modelado de base de datos</h2>
 
 <p>
 Para visualizar el modelado relacional utilizado dentro del proyecto:
@@ -168,7 +157,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 ---
 
-<h2 style="color:#2563eb;">â­ CaracterÃ­sticas principales del sistema</h2>
+<h2 style="color:#2563eb;">â­?CaracterÃ­sticas principales del sistema</h2>
 
 <ul>
 <li>Arquitectura desacoplada</li>
@@ -200,14 +189,11 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 <li>DesconsolidaciÃ³n</li>
 <li>Producto</li>
 <li>Warehouse</li>
-<li>Stock</li>
-</ul>
-
-<h3>En proceso</h3>
-
-<ul>
 <li>Movimiento</li>
+<li>Stock</li>
+
 </ul>
+
 
 <h3>Arquitectura pendiente</h3>
 
@@ -218,8 +204,71 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 </ul>
 
 ---
+<h2 style="color:#2563eb;">âš™ï¸ Documentaci¨®n y Colecci¨®n</h2>
+### Microservicio de Productos ("/api/productos")
 
-<h2 style="color:#2563eb;">ğŸ‘¨â€ğŸ’» Equipo</h2>
+** GET ** `/api/productos`: Lista todos los productos disponibles
+
+<details>
+    <summary><b>? Ver JSON</b></summary>
+
+    ```json
+    [
+      {
+        "id": 1,
+        "sku": "PROD-10023",
+        "nombreProducto": "Pallet Madera Premium",
+        "categoria": "Almacenamiento",
+        "idDesconsolidacion": 12
+      }
+    ]
+    ```
+
+  </details>
+
+** GET ** `/api/productos/sku/{sku}`: Busca productos por c¨®digo de SKU ¨²nico
+
+<details>
+      <summary><b>? Ver JSON</b></summary>
+
+```json
+      {
+        "id": 1,
+        "sku": "PROD-10023",
+        "nombreProducto": "Pallet Madera Premium",
+        "categoria": "Almacenamiento",
+        "idDesconsolidacion": 12
+      }
+      ```
+    </details>
+
+** POST ** `/api/productos`: Registrar un nuevo producto
+
+<details>
+    <summary><b>? Ver JSON</b></summary>
+
+```json
+    {
+      "sku": "PROD-10024",
+      "nombreProducto": "Caja Cart¨®n Corrugado",
+      "categoria": "Embalaje",
+      "idDesconsolidacion": 15
+    }
+    ```
+  </details>
+
+** GET ** `/api/productos/categoria/{categoria}`: Buscar producto por categor¨ªa
+
+** GET ** `/api/productos/desconsolidacion/{idDesconsolidacion}`: Buscar producto por id de desconsolidaci¨®n
+
+** GET ** `/api/productos/nombre/{nombreProducto}`: Buscar producto por nombre
+
+** DELETE ** `/api/productos/{sku}`: Elimina un producto filtrado por el c¨®digo sku
+
+
+---
+
+<h2 style="color:#2563eb;">ğŸ‘¨â€ğŸ’?Equipo</h2>
 
 <ul>
 <li>Javier Herrera</li>
