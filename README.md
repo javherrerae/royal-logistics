@@ -19,7 +19,7 @@ Sistema de gestión logística basado en arquitectura de microservicios, orienta
 </p>
 
 <p>
-El proyecto busca simular el funcionamiento de un centro de distribución similar a operaciones utilizadas actualmente por empresas fulfillment, donde distintos vendedores almacenan productos dentro de una misma red logística, manteniendo control, seguimiento y trazabilidad sobre cada operation realizada.
+El proyecto busca simular el funcionamiento de un centro de distribución similar a operaciones utilizadas actualmente por empresas fulfillment, donde distintos vendedores almacenan productos dentro de una misma red logística, manteniendo control, seguimiento y trazabilidad sobre cada operación realizada.
 </p>
 
 ---
@@ -144,7 +144,7 @@ Para visualizar el modelado relacional utilizado dentro del proyecto:
 
 <li>
 Descargar Oracle SQL Data Modeler desde:
-<a href="[https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/download/](https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/download/)" target="_blank">
+<a href="https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/download/" target="_blank">
 Oracle SQL Data Modeler
 </a>
 </li>
@@ -233,21 +233,3 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
     "idDesconsolidacion": 12
   }
 ]
-```
-<details>
-        
-* **GET** `/api/productos` - Lista todos los productos disponibles.
-
-<details>
-<summary><b>▶ Ver JSON</b></summary>
-
-```json
-{
-  "id": 1,
-  "sku": "PROD-10023",
-  "nombreProducto": "Pallet Madera Premium",
-  "categoria": "Almacenamiento",
-  "idDesconsolidacion": 12
-}
-```
-<details>
