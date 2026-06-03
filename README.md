@@ -250,3 +250,4 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
   "idDesconsolidacion": 12
 }
 ```
+<details>
