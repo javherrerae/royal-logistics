@@ -150,7 +150,7 @@ Oracle SQL Data Modeler
 </li>
 
 <li>
-Descargar y extraer la carpeta 
+Descargar and extraer la carpeta 
 <a href="./modelado%20microservicios">
 <b>modelado microservicios</b>
 </a>
@@ -200,13 +200,8 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 <li>Desconsolidación</li>
 <li>Producto</li>
 <li>Warehouse</li>
-<li>Stock</li>
-</ul>
-
-<h3>En proceso</h3>
-
-<ul>
 <li>Movimiento</li>
+<li>Stock</li>
 </ul>
 
 <h3>Arquitectura pendiente</h3>
@@ -219,14 +214,14 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 ---
 
-<h2 style="color:#2563eb;">📑 Documentación de Endpoints</h2>
+<h2 style="color:#2563eb;">📑 Documentación de Endpoints y Colección</h2>
 
 <h3>Microservicio de Productos</h3>
 
 * **GET** `/api/productos` - Lista todos los productos disponibles.
   
   <details>
-    <summary><b>▶ Ver ejemplo de respuesta (JSON)</b></summary>
+    <summary><b>▶ Ver JSON</b></summary>
 
 ```json
     [
@@ -243,10 +238,10 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 ---
 
-* **GET** `/api/productos/sku/{sku}` - Busca productos por su código de SKU único.
+* **GET** `/api/productos/sku/{sku}` - Busca productos por código de SKU único.
   
   <details>
-    <summary><b>▶ Ver ejemplo de respuesta (JSON)</b></summary>
+    <summary><b>▶ Ver JSON</b></summary>
 
 ```json
     {
@@ -261,10 +256,10 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 ---
 
-* **POST** `/api/productos` - Registrar un nuevo producto en el sistema.
+* **POST** `/api/productos` - Registrar un nuevo producto.
   
   <details>
-    <summary><b>▶ Ver cuerpo de la petición (Body JSON)</b></summary>
+    <summary><b>▶ Ver JSON</b></summary>
 
 ```json
     {
@@ -278,10 +273,10 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 ---
 
-* **GET** `/api/productos/categoria/{categoria}` - Buscar productos filtrados por su categoría logística.
-* **GET** `/api/productos/desconsolidacion/{idDesconsolidacion}` - Buscar productos asociados a un ID de desconsolidación.
-* **GET** `/api/productos/nombre/{nombreProducto}` - Buscar productos por coincidencia de nombre.
-* **DELETE** `/api/productos/{sku}` - Elimina un producto del catálogo mediante su código SKU.
+* **GET** `/api/productos/categoria/{categoria}` - Buscar producto por categoría.
+* **GET** `/api/productos/desconsolidacion/{idDesconsolidacion}` - Buscar producto por id de desconsolidación.
+* **GET** `/api/productos/nombre/{nombreProducto}` - Buscar producto por nombre.
+* **DELETE** `/api/productos/{sku}` - Elimina un producto filtrado por el código sku.
 
 ---
 
