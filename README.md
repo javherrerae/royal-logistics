@@ -221,7 +221,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 * **GET** `/api/productos` - Lista todos los productos disponibles.
 
 <details>
-<summary><b>▶ Ver JSON</b></summary>
+<summary><b>▶ Ver JSON + GET</b></summary>
 
 ```json
 [
@@ -243,3 +243,53 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
   "categoria": "Almacenamiento",
   "idDesconsolidacion": 12
 }
+
+* ** GET ** `/api/productos/categoria/{categoria}`: Buscar producto por categoría
+{
+  "id": 1,
+  "sku": "PROD-10023",
+  "nombreProducto": "Pallet Madera Premium",
+  "categoria": "Almacenamiento",
+  "idDesconsolidacion": 12
+}
+
+* ** GET ** `/api/productos/desconsolidacion/{idDesconsolidacion}`: Buscar producto por id de desconsolidación
+
+* ** GET ** `/api/productos/desconsolidacion/{idDesconsolidacion}`: Buscar producto por id de desconsolidación
+
+* ** GET ** `/api/productos/nombre/{nombreProducto}`: Buscar producto por nombre
+</details>
+
+* ** POST ** 
+** DELETE ** `/api/productos/{sku}`: Elimina un producto filtrado por el código sku
+
+
+---
+
+<h2 style="color:#2563eb;">馃懆鈥嶐煉?Equipo</h2>
+
+<ul>
+<li>Javier Herrera</li>
+<li>Acxel Gonz谩lez</li>
+</ul>
+
+<p>
+<b>Profesor:</b><br>
+Ricardo Mauricio Gonz谩lez Vejar
+</p>
+
+---
+
+<h2 style="color:#2563eb;">馃摌 Consideraciones del proyecto</h2>
+
+<p>
+El presente proyecto fue desarrollado con enfoque acad茅mico para la asignatura Desarrollo Fullstack I de Duoc UC.
+</p>
+
+<p>
+Su objetivo consiste en representar procesos reales utilizados actualmente dentro de operaciones fulfillment y administraci贸n de warehouse modernas, utilizando arquitectura de microservicios para mantener una soluci贸n modular, escalable y desacoplada.
+</p>
+
+<p>
+El sistema busca integrar conceptos de log铆stica, trazabilidad, control de inventario y desarrollo backend utilizando tecnolog铆as como Spring Boot, APIs REST y modelado de bases de datos relacionales.
+</p>
