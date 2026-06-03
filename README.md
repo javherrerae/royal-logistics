@@ -220,65 +220,13 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 En esta sección se documentan los endpoints principales de cada microservicio y se incluye un ejemplo JSON del modelo utilizado. Los ejemplos pueden utilizarse como referencia para probar las rutas desde Postman.
 </p>
 
----
-
-<h3>Microservicio de Autenticación</h3>
-
-**Base URL:** `/api/credenciales`
-
-> Este controlador expone la ruta base del microservicio. Actualmente no define métodos públicos adicionales en el controller.
-
-<details>
-<summary><b>▶ Ver JSON del modelo Credencial</b></summary>
-
-```json
-{
-  "id": 1,
-  "usuario": "admin",
-  "password": "123456",
-  "is_active": true
-}
-```
-
-</details>
-
----
-
-<h3>Microservicio de Empleados / Usuarios</h3>
-
-**Base URL:** `/api/empleados`
-
-| Método | Endpoint | Descripción |
-|---|---|---|
-| **GET** | `/api/empleados` | Lista todos los empleados registrados. |
-| **POST** | `/api/empleados` | Registra un nuevo empleado. |
-| **GET** | `/api/empleados/activos` | Lista los empleados activos. |
-| **GET** | `/api/empleados/rol/{rol}` | Busca empleados por rol. |
-| **DELETE** | `/api/empleados/{id}` | Elimina un empleado por ID. |
-
-<details>
-<summary><b>▶ Ver JSON del modelo Empleado</b></summary>
-
-```json
-{
-  "id": 1,
-  "nombre": "Juan Pérez",
-  "rut": "12345678-9",
-  "correo": "juan.perez@royallogistics.cl",
-  "cargo": "Operario de bodega",
-  "rol": "OPERARIO",
-  "turno": "Mañana",
-  "activo": true
-}
-```
-
-</details>
+** PENDIENTE AUTENTICACION Y USUARIOS **
 
 ---
 
 <h3>Microservicio de Andenes</h3>
 
-**Base URL:** `/api/andenes`
+**Endpoint:** `/api/andenes`
 
 | Método | Endpoint | Descripción |
 |---|---|---|
@@ -302,7 +250,7 @@ En esta sección se documentan los endpoints principales de cada microservicio y
 
 <h3>Microservicio de Camiones</h3>
 
-**Base URL:** `/api/camiones`
+**Endpoint:** `/api/camiones`
 
 | Método | Endpoint | Descripción |
 |---|---|---|
@@ -328,7 +276,7 @@ En esta sección se documentan los endpoints principales de cada microservicio y
 
 <h3>Microservicio de Recepciones</h3>
 
-**Base URL:** `/api/recepciones`
+**Endpoint:** `/api/recepciones`
 
 | Método | Endpoint | Descripción |
 |---|---|---|
@@ -359,7 +307,7 @@ En esta sección se documentan los endpoints principales de cada microservicio y
 
 <h3>Microservicio de Facturas</h3>
 
-**Base URL:** `/api/facturas`
+**Endpoint:** `/api/facturas`
 
 | Método | Endpoint | Descripción |
 |---|---|---|
@@ -391,7 +339,7 @@ En esta sección se documentan los endpoints principales de cada microservicio y
 
 <h3>Microservicio de Desconsolidaciones</h3>
 
-**Base URL:** `/api/desconsolidaciones`
+**Endpoint:** `/api/desconsolidaciones`
 
 | Método | Endpoint | Descripción |
 |---|---|---|
@@ -419,7 +367,7 @@ En esta sección se documentan los endpoints principales de cada microservicio y
 
 <h3>Microservicio de Productos</h3>
 
-**Base URL:** `/api/productos`
+**Endpoint:** `/api/productos`
 
 | Método | Endpoint | Descripción |
 |---|---|---|
@@ -451,7 +399,7 @@ En esta sección se documentan los endpoints principales de cada microservicio y
 
 <h3>Microservicio de Warehouse</h3>
 
-**Base URL:** `/api/warehouse`
+**Endpoint:** `/api/warehouse`
 
 | Método | Endpoint | Descripción |
 |---|---|---|
@@ -481,7 +429,7 @@ En esta sección se documentan los endpoints principales de cada microservicio y
 
 <h3>Microservicio de Stock</h3>
 
-**Base URL:** `/api/stock`
+**Endpoint:** `/api/stock`
 
 | Método | Endpoint | Descripción |
 |---|---|---|
@@ -509,7 +457,7 @@ En esta sección se documentan los endpoints principales de cada microservicio y
 
 <h3>Microservicio de Movimientos</h3>
 
-**Base URL:** `/api/movimientos`
+**Endpoint:** `/api/movimientos`
 
 | Método | Endpoint | Descripción |
 |---|---|---|
