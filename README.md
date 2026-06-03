@@ -50,22 +50,33 @@ Todo esto mediante arquitectura de microservicios utilizando Spring Boot y APIs 
 
 <pre>
 Agendamiento de recepción
-        �?Llegada de camión
-        �?Asignación de andén
-        �?Recepción de factura
-        �?Descarga de pallets / cajas
-        �?Desconsolidación
-        �?Registro de productos
-        �?Asignación de ubicación
-        �?Warehouse
-        �?Actualización de stock
-        �?Movimientos internos
-        �?Seguimiento y trazabilidad
+        ↓
+Llegada de camión
+        ↓
+Asignación de andén
+        ↓
+Recepción de factura
+        ↓
+Descarga de pallets / cajas
+        ↓
+Desconsolidación
+        ↓
+Registro de productos
+        ↓
+Asignación de ubicación
+        ↓
+Warehouse
+        ↓
+Actualización de stock
+        ↓
+Movimientos internos
+        ↓
+Seguimiento y trazabilidad
 </pre>
 
 ---
 
-<h2 style="color:#2563eb;">🏗�?Arquitectura de microservicios</h2>
+<h2 style="color:#2563eb;">🏗️ Arquitectura de microservicios</h2>
 
 <p>
 El sistema fue diseñado bajo arquitectura de microservicios, donde cada módulo cumple una responsabilidad específica dentro de la cadena logística.
@@ -123,7 +134,7 @@ Cada microservicio posee:
 
 ---
 
-<h2 style="color:#2563eb;">🗄�?Modelado de base de datos</h2>
+<h2 style="color:#2563eb;">🗄️ Modelado de base de datos</h2>
 
 <p>
 Para visualizar el modelado relacional utilizado dentro del proyecto:
@@ -157,7 +168,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 ---
 
-<h2 style="color:#2563eb;">�?Características principales del sistema</h2>
+<h2 style="color:#2563eb;">⭐ Características principales del sistema</h2>
 
 <ul>
 <li>Arquitectura desacoplada</li>
@@ -189,11 +200,14 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 <li>Desconsolidación</li>
 <li>Producto</li>
 <li>Warehouse</li>
-<li>Movimiento</li>
 <li>Stock</li>
-
 </ul>
 
+<h3>En proceso</h3>
+
+<ul>
+<li>Movimiento</li>
+</ul>
 
 <h3>Arquitectura pendiente</h3>
 
@@ -204,15 +218,17 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 </ul>
 
 ---
-<h2 style="color:#2563eb;">⚙️ Documentaci��n y Colecci��n</h2>
-### Microservicio de Productos
 
-** GET ** `/api/productos`: Lista todos los productos disponibles
+<h2 style="color:#2563eb;">📑 Documentación de Endpoints</h2>
 
-<details>
-    <summary><b>? Ver JSON</b></summary>
+<h3>Microservicio de Productos</h3>
 
-    ```json
+* **GET** `/api/productos` - Lista todos los productos disponibles.
+  
+  <details>
+    <summary><b>▶ Ver ejemplo de respuesta (JSON)</b></summary>
+
+```json
     [
       {
         "id": 1,
@@ -223,54 +239,53 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
       }
     ]
     ```
-
   </details>
+
 ---
 
-** GET ** `/api/productos/sku/{sku}`: Busca productos por c��digo de SKU ��nico
-
-<details>
-      <summary><b>? Ver JSON</b></summary>
+* **GET** `/api/productos/sku/{sku}` - Busca productos por su código de SKU único.
+  
+  <details>
+    <summary><b>▶ Ver ejemplo de respuesta (JSON)</b></summary>
 
 ```json
-      {
-        "id": 1,
-        "sku": "PROD-10023",
-        "nombreProducto": "Pallet Madera Premium",
-        "categoria": "Almacenamiento",
-        "idDesconsolidacion": 12
-      }
-      ```
-    </details>
+    {
+      "id": 1,
+      "sku": "PROD-10023",
+      "nombreProducto": "Pallet Madera Premium",
+      "categoria": "Almacenamiento",
+      "idDesconsolidacion": 12
+    }
+    ```
+  </details>
+
 ---
 
-** POST ** `/api/productos`: Registrar un nuevo producto
-
-<details>
-    <summary><b>? Ver JSON</b></summary>
+* **POST** `/api/productos` - Registrar un nuevo producto en el sistema.
+  
+  <details>
+    <summary><b>▶ Ver cuerpo de la petición (Body JSON)</b></summary>
 
 ```json
     {
       "sku": "PROD-10024",
-      "nombreProducto": "Caja Cart��n Corrugado",
+      "nombreProducto": "Caja Cartón Corrugado",
       "categoria": "Embalaje",
       "idDesconsolidacion": 15
     }
     ```
   </details>
----
-** GET ** `/api/productos/categoria/{categoria}`: Buscar producto por categor��a
-
-** GET ** `/api/productos/desconsolidacion/{idDesconsolidacion}`: Buscar producto por id de desconsolidaci��n
-
-** GET ** `/api/productos/nombre/{nombreProducto}`: Buscar producto por nombre
-
-** DELETE ** `/api/productos/{sku}`: Elimina un producto filtrado por el c��digo sku
-
 
 ---
 
-<h2 style="color:#2563eb;">👨‍�?Equipo</h2>
+* **GET** `/api/productos/categoria/{categoria}` - Buscar productos filtrados por su categoría logística.
+* **GET** `/api/productos/desconsolidacion/{idDesconsolidacion}` - Buscar productos asociados a un ID de desconsolidación.
+* **GET** `/api/productos/nombre/{nombreProducto}` - Buscar productos por coincidencia de nombre.
+* **DELETE** `/api/productos/{sku}` - Elimina un producto del catálogo mediante su código SKU.
+
+---
+
+<h2 style="color:#2563eb;">👨‍💻 Equipo</h2>
 
 <ul>
 <li>Javier Herrera</li>
