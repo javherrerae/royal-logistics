@@ -233,7 +233,8 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
     "idDesconsolidacion": 12
   }
 ]
-
+```
+</details>
 * **GET** /api/productos/sku/{sku} - Busca productos por código de SKU único.
 
 {
