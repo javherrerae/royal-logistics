@@ -241,6 +241,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 * **GET** /api/productos/sku/{sku} - Busca productos por código de SKU único.
 
 <details>
+<summary><b>▶ Ver JSON + GET</b></summary>
 ```json
 [
 {
@@ -253,6 +254,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 ]
 ```
 </details>
+<summary><b>▶ Ver JSON + GET</b></summary>
 
 * ** GET ** `/api/productos/categoria/{categoria}`: Buscar producto por categoría
 
