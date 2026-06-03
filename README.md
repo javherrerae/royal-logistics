@@ -233,3 +233,13 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
     "idDesconsolidacion": 12
   }
 ]
+
+* **GET** /api/productos/sku/{sku} - Busca productos por código de SKU único.
+
+{
+  "id": 1,
+  "sku": "PROD-10023",
+  "nombreProducto": "Pallet Madera Premium",
+  "categoria": "Almacenamiento",
+  "idDesconsolidacion": 12
+}
