@@ -488,29 +488,17 @@ En esta sección se documentan los endpoints principales de cada microservicio y
 
 ---
 
-<h3>Colección de Postman</h3>
+## Colección Postman ** MODIFICAR COLECCION CUANDO TENGAMOS EL GATEWAY LISTO **
 
-<p>
-Para probar los microservicios, crear una colección en Postman separando las carpetas por módulo:
-</p>
+La colección de pruebas REST se encuentra en:
 
-<ul>
-<li>Autenticación</li>
-<li>Empleados / Usuarios</li>
-<li>Andenes</li>
-<li>Camiones</li>
-<li>Recepciones</li>
-<li>Facturas</li>
-<li>Desconsolidaciones</li>
-<li>Productos</li>
-<li>Warehouse</li>
-<li>Stock</li>
-<li>Movimientos</li>
-</ul>
+`/postman/Royal_Logistics.postman_collection.json`
 
-<p>
-Cada request debe utilizar el método HTTP correspondiente, la URL del endpoint y, cuando aplique, el JSON del modelo mostrado anteriormente en el body con formato <code>raw</code> y tipo <code>JSON</code>.
-</p>
+Para utilizarla:
+1. Abrir Postman.
+2. Seleccionar Import.
+3. Cargar el archivo `Royal_Logistics.postman_collection.json`.
+4. Ejecutar las solicitudes de cada microservicio según el puerto correspondiente.
 
 ---
 
