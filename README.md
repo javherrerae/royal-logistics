@@ -233,3 +233,20 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
     "idDesconsolidacion": 12
   }
 ]
+```
+<details>
+        
+* **GET** `/api/productos` - Lista todos los productos disponibles.
+
+<details>
+<summary><b>▶ Ver JSON</b></summary>
+
+```json
+{
+  "id": 1,
+  "sku": "PROD-10023",
+  "nombreProducto": "Pallet Madera Premium",
+  "categoria": "Almacenamiento",
+  "idDesconsolidacion": 12
+}
+```
