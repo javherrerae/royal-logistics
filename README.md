@@ -214,6 +214,111 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 ---
 
+
+<h2 style="color:#2563eb;">🚀 Ejecución del proyecto por microservicio</h2>
+
+<p>
+Esta sección describe el procedimiento recomendado para levantar el proyecto de forma local. Cada microservicio se ejecuta como una aplicación Spring Boot independiente, por lo que debe iniciarse desde su propia carpeta.
+</p>
+
+<h3>Requisitos previos</h3>
+
+<ul>
+<li>Java 21 instalado y configurado en el sistema.</li>
+<li>Maven instalado o uso del wrapper incluido en cada microservicio (<code>mvnw</code> / <code>mvnw.cmd</code>).</li>
+<li>MySQL Server activo.</li>
+<li>Postman instalado para probar los endpoints REST.</li>
+<li>IntelliJ IDEA o Visual Studio Code como entorno de desarrollo.</li>
+</ul>
+
+<h3>Preparación de base de datos</h3>
+
+<p>
+Cada microservicio utiliza su propia base de datos lógica. Las bases se crean automáticamente si MySQL está activo, debido al parámetro <code>createDatabaseIfNotExist=true</code> definido en los archivos <code>application.properties</code>.
+</p>
+
+<p>
+Antes de ejecutar los servicios, verificar que las credenciales de MySQL coincidan con la configuración del proyecto:
+</p>
+
+```properties
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=update
+```
+
+<p>
+Si el usuario o contraseña de MySQL son distintos en el equipo local, se deben ajustar en el archivo <code>src/main/resources/application.properties</code> de cada microservicio.
+</p>
+
+<h3>Orden recomendado de ejecución</h3>
+
+<p>
+Para evitar errores de comunicación entre servicios, se recomienda iniciar primero Eureka Server y luego los microservicios base antes de ejecutar los servicios que dependen de otros módulos.
+</p>
+
+<ol>
+<li><b>Eureka Server</b></li>
+<li><b>Servicios base:</b> Autenticación, Usuarios, Andén, Camión y Warehouse</li>
+<li><b>Servicios operacionales:</b> Recepción, Factura y Desconsolidación</li>
+<li><b>Servicios dependientes:</b> Producto, Stock y Movimiento</li>
+</ol>
+
+<h3>Comandos de ejecución por servicio</h3>
+
+<p>
+Desde la raíz del repositorio, ingresar a la carpeta del microservicio correspondiente y ejecutar el comando Maven. En Windows se puede usar <code>mvnw.cmd spring-boot:run</code>; en Linux/macOS, <code>./mvnw spring-boot:run</code>. Si Maven está instalado globalmente, también se puede usar <code>mvn spring-boot:run</code>.
+</p>
+
+| Servicio | Carpeta | Comando |
+|---|---|---|
+| Eureka Server | `0. eureka-server` | `cd "0. eureka-server"`<br>`mvn spring-boot:run` |
+| Autenticación | `1. autenticacion` | `cd "1. autenticacion"`<br>`mvn spring-boot:run` |
+| Producto | `2. producto` | `cd "2. producto"`<br>`mvn spring-boot:run` |
+| Usuarios | `3. creacion-usuario` | `cd "3. creacion-usuario"`<br>`mvn spring-boot:run` |
+| Andén | `4. anden` | `cd "4. anden"`<br>`mvn spring-boot:run` |
+| Camión | `5. camion` | `cd "5. camion"`<br>`mvn spring-boot:run` |
+| Recepción | `6. recepcion` | `cd "6. recepcion"`<br>`mvn spring-boot:run` |
+| Factura | `7. factura` | `cd "7. factura"`<br>`mvn spring-boot:run` |
+| Desconsolidación | `8. desconsolidacion` | `cd "8. desconsolidacion"`<br>`mvn spring-boot:run` |
+| Warehouse | `9. warehouse` | `cd "9. warehouse"`<br>`mvn spring-boot:run` |
+| Stock | `10. stock` | `cd "10. stock"`<br>`mvn spring-boot:run` |
+| Movimiento | `11. movimiento` | `cd "11. movimiento"`<br>`mvn spring-boot:run` |
+
+<h3>Verificación de ejecución</h3>
+
+<p>
+Una vez iniciado Eureka Server, se puede verificar su funcionamiento desde el navegador accediendo a:
+</p>
+
+```text
+http://localhost:8761
+```
+
+<p>
+Luego de iniciar cada microservicio, probar sus endpoints desde Postman utilizando la colección incluida en el repositorio:
+</p>
+
+```text
+/postman/Royal_Logistics.postman_collection.json
+```
+
+<p>
+Actualmente, mientras el API Gateway se mantiene como componente pendiente, cada microservicio se prueba de forma independiente según el puerto configurado en su archivo <code>application.properties</code>. Cuando el Gateway sea implementado, el consumo externo de los endpoints deberá centralizarse desde un único punto de entrada.
+</p>
+
+<h3>Problemas comunes</h3>
+
+| Problema | Posible causa | Solución recomendada |
+|---|---|---|
+| El servicio no inicia | MySQL apagado | Iniciar MySQL desde XAMPP, Workbench o servicio local. |
+| Error de conexión a base de datos | Usuario o contraseña incorrectos | Revisar `spring.datasource.username` y `spring.datasource.password`. |
+| Puerto ocupado | Otro servicio usa el mismo puerto | Cambiar `server.port` en `application.properties` o cerrar el proceso que ocupa el puerto. |
+| Error al consumir otro microservicio | Servicio dependiente no iniciado | Ejecutar primero Eureka y luego los servicios requeridos por el flujo. |
+| Endpoints no responden en Postman | URL o puerto incorrecto | Revisar el puerto configurado en `application.properties` y actualizar la variable correspondiente en Postman. |
+
+---
+
 <h2 style="color:#2563eb;">📑 Documentación de Endpoints y Colección</h2>
 
 <p>
