@@ -216,98 +216,380 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 <h2 style="color:#2563eb;">📑 Documentación de Endpoints y Colección</h2>
 
-<h3>Microservicio de Productos</h3>
-
-* **GET** `/api/productos` - Lista todos los productos disponibles.
-
-* ** POST ** 
-
-<details>
-<summary><b>▶ Ver JSON + GET</b></summary>
-
-```json
-[
-  {
-    "id": 1,
-    "sku": "PROD-10023",
-    "nombreProducto": "Pallet Madera Premium",
-    "categoria": "Almacenamiento",
-    "idDesconsolidacion": 12
-  }
-]
-```
-</details>
-
-* **GET** /api/productos/sku/{sku} - Busca productos por código de SKU único.
-
-<details>
-<summary><b>▶ Ver JSON + GET</b></summary>
-```json
-[
-{
-  "id": 1,
-  "sku": "PROD-10023",
-  "nombreProducto": "Pallet Madera Premium",
-  "categoria": "Almacenamiento",
-  "idDesconsolidacion": 12
-}
-]
-```
-</details>
-<summary><b>▶ Ver JSON + GET</b></summary>
-
-* ** GET ** `/api/productos/categoria/{categoria}`: Buscar producto por categoría
-
-<details>
-```json
-[
-{
-  "id": 1,
-  "sku": "PROD-10023",
-  "nombreProducto": "Pallet Madera Premium",
-  "categoria": "Almacenamiento",
-  "idDesconsolidacion": 12
-}
-]
-```
-</details>
-
-* ** GET ** `/api/productos/desconsolidacion/{idDesconsolidacion}`: Buscar producto por id de desconsolidación
-
-* ** GET ** `/api/productos/desconsolidacion/{idDesconsolidacion}`: Buscar producto por id de desconsolidación
-
-* ** GET ** `/api/productos/nombre/{nombreProducto}`: Buscar producto por nombre
-
-* ** POST ** 
-** DELETE ** `/api/productos/{sku}`: Elimina un producto filtrado por el código sku
-
+<p>
+En esta sección se documentan los endpoints principales de cada microservicio y se incluye un ejemplo JSON del modelo utilizado. Los ejemplos pueden utilizarse como referencia para probar las rutas desde Postman.
+</p>
 
 ---
 
-<h2 style="color:#2563eb;">馃懆鈥嶐煉?Equipo</h2>
+<h3>Microservicio de Autenticación</h3>
+
+**Base URL:** `/api/credenciales`
+
+> Este controlador expone la ruta base del microservicio. Actualmente no define métodos públicos adicionales en el controller.
+
+<details>
+<summary><b>▶ Ver JSON del modelo Credencial</b></summary>
+
+```json
+{
+  "id": 1,
+  "usuario": "admin",
+  "password": "123456",
+  "is_active": true
+}
+```
+
+</details>
+
+---
+
+<h3>Microservicio de Empleados / Usuarios</h3>
+
+**Base URL:** `/api/empleados`
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| **GET** | `/api/empleados` | Lista todos los empleados registrados. |
+| **POST** | `/api/empleados` | Registra un nuevo empleado. |
+| **GET** | `/api/empleados/activos` | Lista los empleados activos. |
+| **GET** | `/api/empleados/rol/{rol}` | Busca empleados por rol. |
+| **DELETE** | `/api/empleados/{id}` | Elimina un empleado por ID. |
+
+<details>
+<summary><b>▶ Ver JSON del modelo Empleado</b></summary>
+
+```json
+{
+  "id": 1,
+  "nombre": "Juan Pérez",
+  "rut": "12345678-9",
+  "correo": "juan.perez@royallogistics.cl",
+  "cargo": "Operario de bodega",
+  "rol": "OPERARIO",
+  "turno": "Mañana",
+  "activo": true
+}
+```
+
+</details>
+
+---
+
+<h3>Microservicio de Andenes</h3>
+
+**Base URL:** `/api/andenes`
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| **GET** | `/api/andenes` | Lista todos los andenes. |
+| **GET** | `/api/andenes/{nAnden}` | Busca un andén por número. |
+| **POST** | `/api/andenes` | Registra un nuevo andén. |
+
+<details>
+<summary><b>▶ Ver JSON del modelo Anden</b></summary>
+
+```json
+{
+  "numeroanden": 1,
+  "estado": "Disponible"
+}
+```
+
+</details>
+
+---
+
+<h3>Microservicio de Camiones</h3>
+
+**Base URL:** `/api/camiones`
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| **GET** | `/api/camiones` | Lista todos los camiones. |
+| **GET** | `/api/camiones/patente/{patente}` | Busca un camión por patente. |
+| **POST** | `/api/camiones` | Registra un nuevo camión. |
+| **DELETE** | `/api/camiones/{patente}` | Elimina un camión por patente. |
+
+<details>
+<summary><b>▶ Ver JSON del modelo Camion</b></summary>
+
+```json
+{
+  "patente": "ABCD12",
+  "nombreConductor": "Carlos González",
+  "rutConductor": "11222333-4"
+}
+```
+
+</details>
+
+---
+
+<h3>Microservicio de Recepciones</h3>
+
+**Base URL:** `/api/recepciones`
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| **GET** | `/api/recepciones` | Lista todas las recepciones. |
+| **GET** | `/api/recepciones/id/{idRecepcion}` | Busca una recepción por ID. |
+| **POST** | `/api/recepciones` | Registra una nueva recepción. |
+| **GET** | `/api/recepciones/estado/{estado}` | Busca recepciones por estado. |
+| **GET** | `/api/recepciones/patente/{patente}` | Busca recepciones por patente de camión. |
+| **GET** | `/api/recepciones/anden/{nAnden}` | Busca recepciones por número de andén. |
+| **DELETE** | `/api/recepciones/{id}` | Elimina una recepción por ID. |
+
+<details>
+<summary><b>▶ Ver JSON del modelo Recepcion</b></summary>
+
+```json
+{
+  "idRecepcion": 1,
+  "numeroAnden": 1,
+  "patente": "ABCD12",
+  "fechaHoraRecepcion": "2026-06-03T10:30:00",
+  "estado": "RECIBIDA"
+}
+```
+
+</details>
+
+---
+
+<h3>Microservicio de Facturas</h3>
+
+**Base URL:** `/api/facturas`
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| **GET** | `/api/facturas` | Lista todas las facturas. |
+| **GET** | `/api/facturas/{numeroFactura}` | Busca una factura por número. |
+| **POST** | `/api/facturas` | Registra una nueva factura. |
+| **GET** | `/api/facturas/estado/{estado}` | Busca facturas por estado. |
+| **GET** | `/api/facturas/proveedor/{proveedor}` | Busca facturas por proveedor. |
+| **GET** | `/api/facturas/recepcion/{idRecepcion}` | Busca facturas por ID de recepción. |
+| **DELETE** | `/api/facturas/{nFactura}` | Elimina una factura por número. |
+
+<details>
+<summary><b>▶ Ver JSON del modelo Factura</b></summary>
+
+```json
+{
+  "numeroFactura": "FAC00001",
+  "idRecepcion": 1,
+  "proveedor": "Proveedor Central",
+  "fechaFactura": "2026-06-03",
+  "cantidadCajas": 25,
+  "estado": "REGISTRADA"
+}
+```
+
+</details>
+
+---
+
+<h3>Microservicio de Desconsolidaciones</h3>
+
+**Base URL:** `/api/desconsolidaciones`
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| **GET** | `/api/desconsolidaciones` | Lista todas las desconsolidaciones. |
+| **GET** | `/api/desconsolidaciones/{idDesconsolidacion}` | Busca una desconsolidación por ID. |
+| **POST** | `/api/desconsolidaciones` | Registra una nueva desconsolidación. |
+| **GET** | `/api/desconsolidaciones/factura/{numeroFactura}` | Busca desconsolidaciones por número de factura. |
+| **GET** | `/api/desconsolidaciones/cantidad/{cantidadProductos}` | Busca desconsolidaciones por cantidad de productos. |
+| **DELETE** | `/api/desconsolidaciones/{idDesconsolidacion}` | Elimina una desconsolidación por ID. |
+
+<details>
+<summary><b>▶ Ver JSON del modelo Desconsolidacion</b></summary>
+
+```json
+{
+  "idDesconsolidacion": 1,
+  "numeroFactura": "FAC00001",
+  "cantidadProductos": 50
+}
+```
+
+</details>
+
+---
+
+<h3>Microservicio de Productos</h3>
+
+**Base URL:** `/api/productos`
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| **GET** | `/api/productos` | Lista todos los productos disponibles. |
+| **GET** | `/api/productos/sku/{sku}` | Busca un producto por SKU. |
+| **POST** | `/api/productos` | Registra un nuevo producto. |
+| **GET** | `/api/productos/categoria/{categoria}` | Busca productos por categoría. |
+| **GET** | `/api/productos/desconsolidacion/{idDesconsolidacion}` | Busca productos por ID de desconsolidación. |
+| **GET** | `/api/productos/nombre/{nombreProducto}` | Busca productos por nombre. |
+| **DELETE** | `/api/productos/{sku}` | Elimina un producto por SKU. |
+
+<details>
+<summary><b>▶ Ver JSON del modelo Producto</b></summary>
+
+```json
+{
+  "sku": "PROD-10023",
+  "idDesconsolidacion": 1,
+  "nombreProducto": "Pallet Madera Premium",
+  "categoria": "Almacenamiento",
+  "fecFabricacion": "2026-05-20",
+  "fecCaducidad": "2028-05-20"
+}
+```
+
+</details>
+
+---
+
+<h3>Microservicio de Warehouse</h3>
+
+**Base URL:** `/api/warehouse`
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| **GET** | `/api/warehouse` | Lista todas las ubicaciones de bodega. |
+| **GET** | `/api/warehouse/ubicacion/{idUbicacion}` | Busca una ubicación por ID. |
+| **POST** | `/api/warehouse` | Registra una nueva ubicación. |
+| **GET** | `/api/warehouse/pasillo/{pasillo}` | Busca ubicaciones por pasillo. |
+| **GET** | `/api/warehouse/rack/{rack}` | Busca ubicaciones por rack. |
+| **GET** | `/api/warehouse/nivel/{nivel}` | Busca ubicaciones por nivel. |
+| **DELETE** | `/api/warehouse/{idUbicacion}` | Elimina una ubicación por ID. |
+
+<details>
+<summary><b>▶ Ver JSON del modelo Warehouse</b></summary>
+
+```json
+{
+  "idUbicacion": "U001",
+  "pasillo": "P01",
+  "rack": "R01",
+  "nivel": 1
+}
+```
+
+</details>
+
+---
+
+<h3>Microservicio de Stock</h3>
+
+**Base URL:** `/api/stock`
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| **GET** | `/api/stock` | Lista todo el stock disponible. |
+| **POST** | `/api/stock/inicializar` | Inicializa stock desde otro microservicio. |
+| **POST** | `/api/stock` | Registra o actualiza stock. |
+| **GET** | `/api/stock/producto/sku/{sku}` | Busca stock por SKU de producto. |
+| **GET** | `/api/stock/ubicacion/{idUbicacion}` | Busca stock por ubicación. |
+
+<details>
+<summary><b>▶ Ver JSON del modelo Stock</b></summary>
+
+```json
+{
+  "idStock": 1,
+  "idUbicacion": "U001",
+  "sku": "PROD-10023",
+  "cantDisponibles": 100
+}
+```
+
+</details>
+
+---
+
+<h3>Microservicio de Movimientos</h3>
+
+**Base URL:** `/api/movimientos`
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| **GET** | `/api/movimientos` | Lista todos los movimientos. |
+| **POST** | `/api/movimientos` | Registra un nuevo movimiento. |
+| **GET** | `/api/movimientos/sku/{sku}` | Busca movimientos por SKU. |
+| **GET** | `/api/movimientos/ubicacion/{idUbicacion}` | Busca movimientos por ubicación. |
+| **GET** | `/api/movimientos/tipo/{tipoMovimiento}` | Busca movimientos por tipo. |
+| **GET** | `/api/movimientos/desconsolidacion/{idDesconsolidacion}` | Busca movimientos por ID de desconsolidación. |
+| **DELETE** | `/api/movimientos/{idMovimiento}` | Elimina un movimiento por ID. |
+
+<details>
+<summary><b>▶ Ver JSON del modelo Movimiento</b></summary>
+
+```json
+{
+  "idMovimiento": 1,
+  "idDesconsolidacion": 1,
+  "sku": "PROD-10023",
+  "idUbicacion": "U001",
+  "tipoMovimiento": "INGRESO",
+  "cantidad": 50,
+  "destino": "Warehouse"
+}
+```
+
+</details>
+
+---
+
+<h3>Colección de Postman</h3>
+
+<p>
+Para probar los microservicios, crear una colección en Postman separando las carpetas por módulo:
+</p>
+
+<ul>
+<li>Autenticación</li>
+<li>Empleados / Usuarios</li>
+<li>Andenes</li>
+<li>Camiones</li>
+<li>Recepciones</li>
+<li>Facturas</li>
+<li>Desconsolidaciones</li>
+<li>Productos</li>
+<li>Warehouse</li>
+<li>Stock</li>
+<li>Movimientos</li>
+</ul>
+
+<p>
+Cada request debe utilizar el método HTTP correspondiente, la URL del endpoint y, cuando aplique, el JSON del modelo mostrado anteriormente en el body con formato <code>raw</code> y tipo <code>JSON</code>.
+</p>
+
+---
+
+<h2 style="color:#2563eb;">👨‍💻 Equipo</h2>
 
 <ul>
 <li>Javier Herrera</li>
-<li>Acxel Gonz谩lez</li>
+<li>Acxel González</li>
 </ul>
 
 <p>
 <b>Profesor:</b><br>
-Ricardo Mauricio Gonz谩lez Vejar
+Ricardo Mauricio González Vejar
 </p>
 
 ---
 
-<h2 style="color:#2563eb;">馃摌 Consideraciones del proyecto</h2>
+<h2 style="color:#2563eb;">📌 Consideraciones del proyecto</h2>
 
 <p>
-El presente proyecto fue desarrollado con enfoque acad茅mico para la asignatura Desarrollo Fullstack I de Duoc UC.
+El presente proyecto fue desarrollado con enfoque académico para la asignatura Desarrollo Fullstack I de Duoc UC.
 </p>
 
 <p>
-Su objetivo consiste en representar procesos reales utilizados actualmente dentro de operaciones fulfillment y administraci贸n de warehouse modernas, utilizando arquitectura de microservicios para mantener una soluci贸n modular, escalable y desacoplada.
+Su objetivo consiste en representar procesos reales utilizados actualmente dentro de operaciones fulfillment y administración de warehouse modernas, utilizando arquitectura de microservicios para mantener una soluci贸n modular, escalable y desacoplada.
 </p>
 
 <p>
-El sistema busca integrar conceptos de log铆stica, trazabilidad, control de inventario y desarrollo backend utilizando tecnolog铆as como Spring Boot, APIs REST y modelado de bases de datos relacionales.
+El sistema busca integrar conceptos de logística, trazabilidad, control de inventario y desarrollo backend utilizando tecnologías como Spring Boot, APIs REST y modelado de bases de datos relacionales.
 </p>
