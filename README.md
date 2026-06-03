@@ -19,7 +19,7 @@ Sistema de gestión logística basado en arquitectura de microservicios, orienta
 </p>
 
 <p>
-El proyecto busca simular el funcionamiento de un centro de distribución similar a operaciones utilizadas actualmente por empresas fulfillment, donde distintos vendedores almacenan productos dentro de una misma red logística, manteniendo control, seguimiento y trazabilidad sobre cada operación realizada.
+El proyecto busca simular el funcionamiento de un centro de distribución similar a operaciones utilizadas actualmente por empresas fulfillment, donde distintos vendedores almacenan productos dentro de una misma red logística, manteniendo control, seguimiento y trazabilidad sobre cada operation realizada.
 </p>
 
 ---
@@ -144,13 +144,13 @@ Para visualizar el modelado relacional utilizado dentro del proyecto:
 
 <li>
 Descargar Oracle SQL Data Modeler desde:
-<a href="https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/download/" target="_blank">
+<a href="[https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/download/](https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/download/)" target="_blank">
 Oracle SQL Data Modeler
 </a>
 </li>
 
 <li>
-Descargar and extraer la carpeta 
+Descargar y extraer la carpeta 
 <a href="./modelado%20microservicios">
 <b>modelado microservicios</b>
 </a>
@@ -219,91 +219,17 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 <h3>Microservicio de Productos</h3>
 
 * **GET** `/api/productos` - Lista todos los productos disponibles.
-  
-  <details>
-    <summary><b>▶ Ver JSON</b></summary>
+
+<details>
+<summary><b>▶ Ver JSON</b></summary>
 
 ```json
-    [
-      {
-        "id": 1,
-        "sku": "PROD-10023",
-        "nombreProducto": "Pallet Madera Premium",
-        "categoria": "Almacenamiento",
-        "idDesconsolidacion": 12
-      }
-    ]
-    ```
-  </details>
-
----
-
-* **GET** `/api/productos/sku/{sku}` - Busca productos por código de SKU único.
-  
-  <details>
-    <summary><b>▶ Ver JSON</b></summary>
-
-```json
-    {
-      "id": 1,
-      "sku": "PROD-10023",
-      "nombreProducto": "Pallet Madera Premium",
-      "categoria": "Almacenamiento",
-      "idDesconsolidacion": 12
-    }
-    ```
-  </details>
-
----
-
-* **POST** `/api/productos` - Registrar un nuevo producto.
-  
-  <details>
-    <summary><b>▶ Ver JSON</b></summary>
-
-```json
-    {
-      "sku": "PROD-10024",
-      "nombreProducto": "Caja Cartón Corrugado",
-      "categoria": "Embalaje",
-      "idDesconsolidacion": 15
-    }
-    ```
-  </details>
-
----
-
-* **GET** `/api/productos/categoria/{categoria}` - Buscar producto por categoría.
-* **GET** `/api/productos/desconsolidacion/{idDesconsolidacion}` - Buscar producto por id de desconsolidación.
-* **GET** `/api/productos/nombre/{nombreProducto}` - Buscar producto por nombre.
-* **DELETE** `/api/productos/{sku}` - Elimina un producto filtrado por el código sku.
-
----
-
-<h2 style="color:#2563eb;">👨‍💻 Equipo</h2>
-
-<ul>
-<li>Javier Herrera</li>
-<li>Acxel González</li>
-</ul>
-
-<p>
-<b>Profesor:</b><br>
-Ricardo Mauricio González Vejar
-</p>
-
----
-
-<h2 style="color:#2563eb;">📘 Consideraciones del proyecto</h2>
-
-<p>
-El presente proyecto fue desarrollado con enfoque académico para la asignatura Desarrollo Fullstack I de Duoc UC.
-</p>
-
-<p>
-Su objetivo consiste en representar procesos reales utilizados actualmente dentro de operaciones fulfillment y administración de warehouse modernas, utilizando arquitectura de microservicios para mantener una solución modular, escalable y desacoplada.
-</p>
-
-<p>
-El sistema busca integrar conceptos de logística, trazabilidad, control de inventario y desarrollo backend utilizando tecnologías como Spring Boot, APIs REST y modelado de bases de datos relacionales.
-</p>
+[
+  {
+    "id": 1,
+    "sku": "PROD-10023",
+    "nombreProducto": "Pallet Madera Premium",
+    "categoria": "Almacenamiento",
+    "idDesconsolidacion": 12
+  }
+]
