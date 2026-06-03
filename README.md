@@ -242,6 +242,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 <details>
 ```json
+[
 {
   "id": 1,
   "sku": "PROD-10023",
@@ -249,6 +250,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
   "categoria": "Almacenamiento",
   "idDesconsolidacion": 12
 }
+]
 ```
 </details>
 
@@ -256,6 +258,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
 
 <details>
 ```json
+[
 {
   "id": 1,
   "sku": "PROD-10023",
@@ -263,6 +266,7 @@ El modelado fue desarrollado previamente para mantener coherencia entre el flujo
   "categoria": "Almacenamiento",
   "idDesconsolidacion": 12
 }
+]
 ```
 </details>
 
