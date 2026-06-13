@@ -17,11 +17,11 @@ Historial de actualizaciones del proyecto Royal Logistics
 </ul>
 
 <ul>
-Creación POM parent
+<li>Creación POM parent</li>
 </ul>
 
 <ul>
-Documentación Swagger
+<li>Documentación Swagger</li>
 </ul>
 
 <h2 style="color:#2563eb;">Versión 0.5 — 18/05/2026</h2>
