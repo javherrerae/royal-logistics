@@ -16,9 +16,13 @@ Historial de actualizaciones del proyecto Royal Logistics
 <li>Finalización e implementación completa de API Gateway</li>
 </ul>
 
-<h3>Creación POM parent</h3>
+<ul>
+Creación POM parent
+</ul>
 
-<h3>Documentación Swagger</h3>
+<ul>
+Documentación Swagger
+</ul>
 
 <h2 style="color:#2563eb;">Versión 0.5 — 18/05/2026</h2>
 
