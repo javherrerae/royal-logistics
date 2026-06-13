@@ -22,6 +22,8 @@ Historial de actualizaciones del proyecto Royal Logistics
 
 <ul>
 <li>Documentación Swagger</li>
+    <li>Swagger individual por microservicio</li>
+    <li>Swagger general por puerto gateway: http://localhost:8080/swagger-ui/index.html</li>
 </ul>
 
 <h2 style="color:#2563eb;">Versión 0.5 — 18/05/2026</h2>
