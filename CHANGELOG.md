@@ -9,6 +9,14 @@ Historial de actualizaciones del proyecto Royal Logistics
 </h3>
 
 </div>
+<h2 style="color:#2563eb;">Versión 0.7 — 16/06/2026</h2>
+
+<ul>
+<li>Documentación Swagger</li>
+    <li>Se comenta cada End-Point por Micro-servicios</li>
+    <li>Se corrigen relaciones entre End-Points e interfaz de Swagger</li>
+</ul>
+
 
 <h2 style="color:#2563eb;">Versión 0.6 — 13/06/2026</h2>
 
