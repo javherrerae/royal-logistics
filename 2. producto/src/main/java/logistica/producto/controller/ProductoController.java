@@ -13,21 +13,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import logistica.producto.model.Producto;
 import logistica.producto.service.ProductoService;
 
+@Tag(name = "Gestión de Productos", description = "Endpoints para registrar, consultar y eliminar productos")
 @RestController
 @RequestMapping("/api/productos")
 public class ProductoController {
     @Autowired
     private ProductoService service;
 
-    // Listar todos los productos
+    @Operation(summary = "Listar todos los productos",
+               description = "Obtiene una lista de todos los productos registrados en el sistema")
     @GetMapping
     public ResponseEntity<List<Producto>> listarTodos() {
         return ResponseEntity.ok(service.listarTodos());
     }
 
+    @Operation(summary = "Buscar producto por SKU",
+               description = "Obtiene un producto específico utilizando su SKU")
     @GetMapping("/sku/{sku}")
     public ResponseEntity<?> buscarPorSku(@PathVariable String sku) {
         Producto producto = service.buscarPorSku(sku);
@@ -38,7 +44,8 @@ public class ProductoController {
         return ResponseEntity.ok(producto);
     }
 
-    // Registrar producto
+    @Operation(summary = "Registrar producto",
+               description = "Registra un nuevo producto en el sistema")
     @PostMapping
     public ResponseEntity<?> registrar(@RequestBody Producto producto) {
         try {
@@ -51,14 +58,16 @@ public class ProductoController {
         }
     }
 
-    // Buscar productos por categoría
+    @Operation(summary = "Buscar productos por categoría",
+               description = "Obtiene una lista de productos que pertenecen a una categoría específica")
     @GetMapping("/categoria/{categoria}")
     public ResponseEntity<List<Producto>> buscarPorCategoria(
             @PathVariable String categoria) {
         return ResponseEntity.ok(service.buscarPorCategoria(categoria));
     }
 
-    // Buscar productos por desconsolidación
+    @Operation(summary = "Buscar productos por desconsolidación",
+               description = "Obtiene una lista de productos que pertenecen a una desconsolidación específica")
     @GetMapping("/desconsolidacion/{idDesconsolidacion}")
     public ResponseEntity<List<Producto>> buscarPorDesconsolidacion(
             @PathVariable Long idDesconsolidacion) {
@@ -66,7 +75,8 @@ public class ProductoController {
                 service.buscarPorDesconsolidacion(idDesconsolidacion));
     }
 
-    // Buscar productos por nombre
+    @Operation(summary = "Buscar productos por nombre",
+               description = "Obtiene una lista de productos que coinciden con un nombre específico")
     @GetMapping("/nombre/{nombreProducto}")
     public ResponseEntity<List<Producto>> buscarPorNombre(
             @PathVariable String nombreProducto) {
@@ -74,7 +84,8 @@ public class ProductoController {
                 service.buscarPorNombre(nombreProducto));
     }
 
-    // Eliminar producto
+    @Operation(summary = "Eliminar producto",
+               description = "Elimina un producto específico del sistema")
     @DeleteMapping("/{sku}")
     public ResponseEntity<?> eliminar(@PathVariable String sku) {
         try {

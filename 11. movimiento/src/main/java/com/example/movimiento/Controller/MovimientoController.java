@@ -5,11 +5,21 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.movimiento.Model.Movimiento;
 import com.example.movimiento.Service.MovimientoService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "Gestión de Movimientos", description = "Endpoints para registrar, consultar y eliminar movimientos")
 @RestController
 @RequestMapping("/api/movimientos")
 public class MovimientoController {
@@ -17,13 +27,15 @@ public class MovimientoController {
     @Autowired
     private MovimientoService service;
 
-    // Listamos todos los movimientos
+    @Operation(summary = "Listar todos los movimientos",
+               description = "Obtiene una lista de todos los movimientos registrados en el sistema")
     @GetMapping
     public ResponseEntity<List<Movimiento>> listarTodos() {
         return ResponseEntity.ok(service.listarTodos());
     }
 
-    // Registramos un movimiento
+    @Operation(summary = "Registrar un movimiento",
+               description = "Registra un nuevo movimiento en el sistema")
     @PostMapping
     public ResponseEntity<?> registrar(
             @RequestBody Movimiento movimiento) {
@@ -38,7 +50,8 @@ public class MovimientoController {
         }
     }
 
-    // Buscar movimientos por SKU
+    @Operation(summary = "Buscar movimientos por SKU",
+               description = "Obtiene una lista de movimientos que coinciden con un SKU específico")
     @GetMapping("/sku/{sku}")
     public ResponseEntity<List<Movimiento>> buscarPorSku(
             @PathVariable String sku) {
@@ -49,7 +62,8 @@ public class MovimientoController {
     // en CUALES ubicaciones
 
 
-    // Buscar movimientos por ubicación
+    @Operation(summary = "Buscar movimientos por ubicación",
+               description = "Obtiene una lista de movimientos que coinciden con una ubicación específica")
     @GetMapping("/ubicacion/{idUbicacion}")
     public ResponseEntity<List<Movimiento>> buscarPorUbicacion(
             @PathVariable String idUbicacion) {
@@ -57,7 +71,8 @@ public class MovimientoController {
                 service.buscarPorUbicacion(idUbicacion));
     }
 
-    // Buscar movimientos por tipo de movimiento
+    @Operation(summary = "Buscar movimientos por tipo de movimiento",
+               description = "Obtiene una lista de movimientos que coinciden con un tipo de movimiento específico")
     @GetMapping("/tipo/{tipoMovimiento}")
     public ResponseEntity<List<Movimiento>> buscarPorTipoMovimiento(
             @PathVariable String tipoMovimiento) {
@@ -65,7 +80,8 @@ public class MovimientoController {
                 service.buscarPorTipoMovimiento(tipoMovimiento));
     }
 
-    // Buscar movimientos por desconsolidación
+    @Operation(summary = "Buscar movimientos por desconsolidación",
+               description = "Obtiene una lista de movimientos que coinciden con una desconsolidación específica")
     @GetMapping("/desconsolidacion/{idDesconsolidacion}")
     public ResponseEntity<List<Movimiento>> buscarPorDesconsolidacion(
             @PathVariable Long idDesconsolidacion) {
@@ -74,7 +90,8 @@ public class MovimientoController {
                         idDesconsolidacion));
     }
 
-    // Eliminamos movimiento
+    @Operation(summary = "Eliminar movimiento",
+               description = "Elimina un movimiento específico del sistema")
     @DeleteMapping("/{idMovimiento}")
     public ResponseEntity<?> eliminar(
             @PathVariable Long idMovimiento) {

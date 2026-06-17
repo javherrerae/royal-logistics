@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.desconsolidacion.Model.Desconsolidacion;
 import com.example.desconsolidacion.Service.DesconsolidacionService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "Gestión de Desconsolidaciones", description = "Endpoints para registrar, consultar y eliminar desconsolidaciones")
 @RestController
 @RequestMapping("/api/desconsolidaciones")
 public class DesconsolidacionController {
@@ -23,12 +27,15 @@ public class DesconsolidacionController {
     @Autowired
     private DesconsolidacionService service;
 
-    // Listar todas las desconsolidaciones
+    @Operation(summary = "Listar todas las desconsolidaciones",
+               description = "Obtiene una lista de todas las desconsolidaciones registradas en el sistema")
     @GetMapping
     public ResponseEntity<List<Desconsolidacion>> listarTodas() {
         return ResponseEntity.ok(service.listarTodas());
     }
 
+    @Operation(summary = "Buscar desconsolidación por ID",
+               description = "Obtiene una desconsolidación específica utilizando su ID")
     @GetMapping("/{idDesconsolidacion}")
     public ResponseEntity<?> buscarPorId(@PathVariable Long idDesconsolidacion) {
         Desconsolidacion desconsolidacion = service.buscarPorId(idDesconsolidacion);
@@ -41,7 +48,8 @@ public class DesconsolidacionController {
         return ResponseEntity.ok(desconsolidacion);
     }
 
-    // Registrar desconsolidación
+    @Operation(summary = "Registrar desconsolidación",
+               description = "Registra una nueva desconsolidación en el sistema")
     @PostMapping
     public ResponseEntity<?> registrar(
             @RequestBody Desconsolidacion desconsolidacion) {
@@ -56,7 +64,8 @@ public class DesconsolidacionController {
         }
     }
 
-    // Buscar por factura
+    @Operation(summary = "Buscar desconsolidación por número de factura",
+               description = "Obtiene una lista de desconsolidaciones que coinciden con un número de factura específico")
     @GetMapping("/factura/{numeroFactura}")
     public ResponseEntity<List<Desconsolidacion>> buscarPorFactura(
             @PathVariable String numeroFactura) {
@@ -64,7 +73,8 @@ public class DesconsolidacionController {
                 service.buscarPorFactura(numeroFactura));
     }
 
-    // Buscar por cantidad de productos
+    @Operation(summary = "Buscar desconsolidaciones por cantidad de productos",
+               description = "Obtiene una lista de desconsolidaciones que coinciden con una cantidad específica de productos")
     @GetMapping("/cantidad/{cantidadProductos}")
     public ResponseEntity<List<Desconsolidacion>>
     buscarPorCantidadProductos(
@@ -73,7 +83,8 @@ public class DesconsolidacionController {
                 service.buscarPorCantidadProductos(cantidadProductos));
     }
 
-    // Eliminar desconsolidación
+    @Operation(summary = "Eliminar desconsolidación",
+               description = "Elimina una desconsolidación específica utilizando su ID")
     @DeleteMapping("/{idDesconsolidacion}")
     public ResponseEntity<?> eliminar(
             @PathVariable Long idDesconsolidacion) {

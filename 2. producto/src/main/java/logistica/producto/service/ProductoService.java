@@ -11,7 +11,6 @@ import logistica.producto.dto.StockDTO;
 import logistica.producto.model.Producto;
 import logistica.producto.repository.ProductoRepository;
 import logistica.producto.client.DesconsolidacionClient;
-import logistica.producto.client.StockFeignClient;
 
 
 @Service

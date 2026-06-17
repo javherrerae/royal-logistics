@@ -1,0 +1,5 @@
+com\example\anden\Service\AndenService.class
+com\example\anden\AndenApplication.class
+com\example\anden\Controller\AndenController.class
+com\example\anden\Model\Anden.class
+com\example\anden\Repository\AndenRepository.class

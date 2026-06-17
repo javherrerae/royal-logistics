@@ -1,0 +1,6 @@
+com\example\factura\client\RecepcionClient.class
+com\example\factura\FacturaApplication.class
+com\example\factura\Model\Factura.class
+com\example\factura\Repository\FacturaRepository.class
+com\example\factura\Service\FacturaService.class
+com\example\factura\Controller\FacturaController.class

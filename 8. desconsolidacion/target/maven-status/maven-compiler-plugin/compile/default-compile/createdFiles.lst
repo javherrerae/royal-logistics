@@ -1,0 +1,6 @@
+com\example\desconsolidacion\Controller\DesconsolidacionController.class
+com\example\desconsolidacion\DesconsolidacionApplication.class
+com\example\desconsolidacion\Repository\DesconsolidacionRepository.class
+com\example\desconsolidacion\client\FacturaClient.class
+com\example\desconsolidacion\Model\Desconsolidacion.class
+com\example\desconsolidacion\Service\DesconsolidacionService.class

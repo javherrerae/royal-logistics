@@ -1,0 +1,7 @@
+com\example\recepcion\Repository\RecepcionRepository.class
+com\example\recepcion\client\CamionClient.class
+com\example\recepcion\Service\RecepcionService.class
+com\example\recepcion\Model\Recepcion.class
+com\example\recepcion\RecepcionApplication.class
+com\example\recepcion\client\AndenClient.class
+com\example\recepcion\Controller\RecepcionController.class

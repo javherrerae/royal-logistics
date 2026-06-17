@@ -1,0 +1,5 @@
+com\example\warehouse\Controller\WarehouseController.class
+com\example\warehouse\Service\WarehouseService.class
+com\example\warehouse\Repository\WarehouseRepository.class
+com\example\warehouse\WarehouseApplication.class
+com\example\warehouse\Model\Warehouse.class

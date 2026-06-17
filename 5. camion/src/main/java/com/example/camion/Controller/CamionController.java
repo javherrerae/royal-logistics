@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.camion.Model.Camion;
 import com.example.camion.Service.CamionService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
+@Tag(name = "Gestión de Camiones", description = "Endpoints para registrar, consultar y eliminar camiones")
 @RestController
 @RequestMapping("/api/camiones")
 public class CamionController {
@@ -27,12 +30,16 @@ public class CamionController {
         this.camionService = camionService;
     }
 
+    @Operation(summary = "Listar todos los camiones",
+               description = "Obtiene una lista de todos los camiones registrados en el sistema")
     @GetMapping
     public ResponseEntity<List<Camion>> listar() {
         List<Camion> camiones = camionService.listarTodos();
         return ResponseEntity.ok(camiones);
     }
 
+    @Operation(summary = "Buscar camión por patente",
+               description = "Obtiene un camión específico utilizando su patente")
     @GetMapping("/patente/{patente}")
     public ResponseEntity<?> buscarPorPatente(@PathVariable String patente) {
         // Buscamos el camión en el servicio
@@ -46,6 +53,8 @@ public class CamionController {
             return ResponseEntity.ok(camion);
         }
 
+    @Operation(summary = "Registrar camión",
+               description = "Registra un nuevo camión en el sistema")
     @PostMapping
     public ResponseEntity<Camion> crear(@Valid @RequestBody Camion camion) {
         if (camion == null) {
@@ -57,6 +66,8 @@ public class CamionController {
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoCamion);
     }
 
+    @Operation(summary = "Eliminar camión",
+               description = "Elimina un camión específico del sistema")
     @DeleteMapping("/{patente}")
     public ResponseEntity<?> eliminarCamion(@PathVariable String patente) {
         boolean eliminado = camionService.eliminarCamionPorPatente(patente);
@@ -68,5 +79,4 @@ public class CamionController {
         
         return ResponseEntity.ok("Camión con patente '" + patente + "' eliminado exitosamente.");
     }
-
 }

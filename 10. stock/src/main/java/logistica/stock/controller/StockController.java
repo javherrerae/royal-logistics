@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import logistica.stock.model.Stock;
 import logistica.stock.service.StockServiceServ;
 
+@Tag(name = "Gestión de Stock", description = "Endpoints para registrar, consultar y eliminar stock de productos")
 @RestController
 @RequestMapping("/api/stock")
 public class StockController {
@@ -22,20 +26,23 @@ public class StockController {
     @Autowired
     private StockServiceServ service;
 
-    // 1. Listar todo el stock disponible en la empresa
+    @Operation(summary = "Listar todo el stock",
+               description = "Obtiene una lista de todo el stock registrado en el sistema, incluyendo productos, ubicaciones y cantidades")
     @GetMapping
     public ResponseEntity<List<Stock>> listarTodos() {
         return ResponseEntity.ok(service.listarTodos());
     }
 
-    // Endpoint exclusivo para ser consumido de manera inter-servicio
+    @Operation(summary = "Inicializar stock",
+               description = "Registra un nuevo stock en el sistema. Si el SKU y la ubicación ya existen, se actualizará la cantidad existente.")
     @PostMapping("/inicializar")
-    public ResponseEntity<Stock> inicializarStock(@RequestBody Stock stock) {
+    public ResponseEntity<Stock> inicializarStock(@RequestBody @NonNull Stock stock) {
         Stock nuevoStock = service.inicializarStock(stock);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoStock);
 }
 
-    // 2. Registrar nuevo stock o incrementar existencias si ya existe en la ubicación
+    @Operation(summary = "Registrar o actualizar stock",
+               description = "Registra un nuevo stock en el sistema o incrementa las existencias si ya existe en la ubicación.")
     @PostMapping
     public ResponseEntity<?> registrarOActualizar(@RequestBody Stock stock) {
         try {
@@ -47,13 +54,15 @@ public class StockController {
         }
     }
 
-    // 3. Buscar stock de un producto específico mediante su SKU
+    @Operation(summary = "Buscar stock por SKU",
+               description = "Obtiene una lista de stock que coinciden con un SKU específico")
     @GetMapping("/producto/sku/{sku}")
     public ResponseEntity<List<Stock>> buscarPorSku(@PathVariable String sku) {
         return ResponseEntity.ok(service.buscarPorSku(sku));
     }
 
-    // 4. Buscar qué productos hay guardados en una ubicación de la bodega
+    @Operation(summary = "Buscar stock por ubicación",
+               description = "Obtiene una lista de stock que coinciden con una ubicación específica")
     @GetMapping("/ubicacion/{idUbicacion}")
     public ResponseEntity<List<Stock>> buscarPorUbicacion(@PathVariable String idUbicacion) {
         return ResponseEntity.ok(service.buscarPorUbicacion(idUbicacion));

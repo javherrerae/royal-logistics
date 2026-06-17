@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.recepcion.Model.Recepcion;
 import com.example.recepcion.Service.RecepcionService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "Gestión de Recepciones", description = "Endpoints para registrar, consultar y eliminar recepciones")
 @RestController
 @RequestMapping("/api/recepciones")
 public class RecepcionController {
@@ -24,13 +27,15 @@ public class RecepcionController {
     @Autowired
     private RecepcionService service;
 
-    // Listamos todas las recepciones
-
+    @Operation(summary = "Listar todas las recepciones",
+               description = "Obtiene una lista de todas las recepciones registradas en el sistema")
     @GetMapping
     public ResponseEntity<List<Recepcion>> listarTodas() {
         return ResponseEntity.ok(service.listarTodas()); 
     }
 
+    @Operation(summary = "Buscar recepción por ID",
+               description = "Obtiene una recepción específica utilizando su ID")
     @GetMapping("/id/{idRecepcion}")
     public ResponseEntity<?> buscarPorId(@PathVariable Long idRecepcion) {
         Recepcion recepcion = service.buscarPorId(idRecepcion);
@@ -41,10 +46,10 @@ public class RecepcionController {
         }
         
         return ResponseEntity.ok(recepcion);
-    }
+}
 
-    // Registramos recepción
-
+    @Operation(summary = "Registrar recepción",
+            description = "Registra una nueva recepción en el sistema")
     @PostMapping
     public ResponseEntity<?> registrar(@RequestBody Recepcion recepcion) {
         try {
@@ -59,29 +64,29 @@ public class RecepcionController {
         }
     }
 
-    // Buscar recepciones por estado
-
+    @Operation(summary = "Buscar recepciones por estado",
+               description = "Obtiene una lista de recepciones filtradas por su estado")
     @GetMapping("/estado/{estado}")
     public ResponseEntity<List<Recepcion>> buscarPorEstado(@PathVariable String estado) {
         return ResponseEntity.ok(service.buscarPorEstado(estado));
     }
 
-    // Buscar recepciones por patente
-
+    @Operation(summary = "Buscar recepciones por patente",
+               description = "Obtiene una lista de recepciones filtradas por su patente")
     @GetMapping("/patente/{patente}")
     public ResponseEntity<List<Recepcion>> buscarPorPatente (@PathVariable String patente) {
         return ResponseEntity.ok(service.buscarPorPatente(patente));
     }
 
-    // Buscar recepciones por andén
-
+    @Operation(summary = "Buscar recepciones por número de andén",
+               description = "Obtiene una lista de recepciones filtradas por su número de andén")
     @GetMapping("/anden/{nAnden}")
     public ResponseEntity<List<Recepcion>> buscarPorAnden(@PathVariable Long nAnden) {
         return ResponseEntity.ok(service.buscarPorAnden(nAnden));
     }
 
-    // Eliminar recepcion
-
+    @Operation(summary = "Eliminar recepción",
+                description = "Elimina una recepción específica del sistema")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable Long id) {
         try {
@@ -95,5 +100,4 @@ public class RecepcionController {
 
         }
     }   
-
 }
