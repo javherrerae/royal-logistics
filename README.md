@@ -1,3 +1,10 @@
+| **🐳 Versión Con Docker** <br>*(Avance Examen Transversal)* | Archivo `.zip` que contiene la carpeta `apps/` con los `.jar`, el archivo `docker-compose.yml` y el script automatizado `Iniciar.bat`. |
+
+[Descargar ZIP Docker aquí](https://drive.google.com/drive/folders/1qeJiBUqc4cOUhrpfNHfEXUhW8mmDuZcr) |
+
+| **🎥 Video de Defensa Técnica** <br>*(Evaluación Individual)* | Enlace directo al video explicativo donde se evidencia el funcionamiento, testing y el aporte técnico individual.
+**Duración ideal: 15 minutos (Máximo permitido: 18 minutos).** | [Ver Video Explicativo aquí] (https://drive.google.com/drive/folders/1qeJiBUqc4cOUhrpfNHfEXUhW8mmDuZcr) |
+
 <div align="center">
 
 <h1 style="color:#2563eb;">
