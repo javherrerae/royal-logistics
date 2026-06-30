@@ -1,0 +1,19 @@
+feat: Consolidar arquitectura multi-módulo de microservicios Royal Logistics
+
+Se consolida el avance del proyecto Royal Logistics mediante la reorganización de la arquitectura basada en microservicios, incorporando Eureka Server, API Gateway y los servicios funcionales del sistema logístico.
+
+Se incluye Swagger para exposición de los End-Points de los controladores. Además de su respectiva documentación con títulos y descripciones correspondientes para cada microservicio.
+
+Se actualiza la estructura Maven multi-módulo, integrando un pom.xml padre para centralizar versiones, dependencias comunes, configuración de compilación y relación entre módulos. Además, se ajustan los pom.xml de los microservicios para heredar correctamente desde el parent, reduciendo duplicidad y mejorando la mantenibilidad del proyecto.
+
+Se corrigen dependencias y configuraciones asociadas a Spring Boot, Spring Cloud, Eureka Client, Gateway, OpenAPI/Swagger, JPA y conectividad con base de datos, permitiendo una integración más ordenada entre los servicios.
+
+Se hace integración de Docker para encapsulación del proyecto completo.
+
+Se realiza la conversión de configuraciones desde application.properties hacia application.yml, dejando una estructura más clara, legible y consistente para definir puertos, nombres de aplicación, rutas del gateway, configuración de Eureka, datasource y parámetros propios de cada microservicio.
+
+Se ajusta la configuración del API Gateway para enrutar correctamente las solicitudes hacia los servicios registrados, permitiendo centralizar el acceso a los endpoints y facilitar la exposición de la documentación Swagger/OpenAPI desde la arquitectura distribuida.
+
+Se revisan y corrigen configuraciones de arranque de los servicios, clases principales, puertos, nombres de aplicación y registro en Eureka, con el objetivo de permitir el levantamiento coordinado del ecosistema de microservicios.
+
+Se incorpora y actualiza documentación del proyecto, incluyendo mejoras en README y CHANGELOG, dejando registro del avance técnico realizado, la estructura del sistema y consideraciones para ejecución local mediante Maven, Docker y Docker Compose."
