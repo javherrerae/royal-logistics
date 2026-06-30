@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="474367B8-BD1C-5C7E-0548-96522187E69B" name="FACTURA_PRODUCTOS">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:55:54 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="n_factura" id="D87A38E3-0135-6412-E4C6-7A648DD6FECE">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:56:42 UTC</createdTime>
+<generatorID>8F3075B5-90E8-1029-4371-3B747F0EE879</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<referedAttribute>492D4DC3-AB23-2768-51E0-219FAE36CDFC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SKU" id="5F62E063-38E9-9C6D-5FAC-0DA5B216AD49">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:56:54 UTC</createdTime>
+<generatorID>C5E5F322-1DFF-33A4-301B-83A943BE2AE2</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<referedAttribute>CD226E4E-F497-B990-56A7-61A7A96700E6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="85F2F37F-ECEE-FC35-78C3-E10C16BDB4C3" name="FACTURA_PRODUCTOS PK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:56:42 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D87A38E3-0135-6412-E4C6-7A648DD6FECE</attributeRef>
+<attributeRef>5F62E063-38E9-9C6D-5FAC-0DA5B216AD49</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

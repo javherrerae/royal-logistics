@@ -1,0 +1,121 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5DA2C203-46E2-0D46-B89C-24D113630DC0" name="STOCK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>7549E52F-62D5-16B9-ACB1-ACDE348C37DE</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_stock" id="A577A132-7E88-FAE7-472C-260CC4E4EF46">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>D0DDA5C8-FEA6-127C-CE6C-B7838F4D8EA7</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>100</dataTypePrecision>
+<ownDataTypeParameters>,100,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WAREHOUSE_id_ubicacion" id="8FB63DEA-A248-39E5-03E4-E08A766206F9">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>9B298287-E867-E719-AE69-52AB4C8A6FB4</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4BB42A47-8450-70B3-B322-33A8EBCEA8FB" referredColumn="CC4C2ADA-8E56-CD36-2691-ABE98DBA96AD"/>
+</associations>
+</Column>
+<Column name="PRODUCTOS_SKU" id="B9659498-EBB9-B571-ADC6-884EE753B60F">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>52648E1A-D85D-C59C-8DB7-A62E80A18D17</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9489D914-5C61-6691-CB44-5621020462C1" referredColumn="EFEBF6A1-E50E-D7C5-65A4-680912B04FD3"/>
+</associations>
+</Column>
+<Column name="PRODUCTOS_nombre_producto" id="36AC1D45-5FF0-85D8-66FE-EDC751EC43BC">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>6A43ADFE-3E48-BB59-AB30-A5F296029273</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9489D914-5C61-6691-CB44-5621020462C1" referredColumn="B7735FD4-3B1B-AFF3-ECE5-2460AF0786A9"/>
+</associations>
+</Column>
+<Column name="cant_disponibles" id="5F7C3C6D-A7D4-EA14-DE83-08234E034066">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>C6795205-00C1-3FF5-09E0-10EA82EA6722</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>100</dataTypePrecision>
+<ownDataTypeParameters>,100,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="31A4942D-4F1C-86BE-C09A-2FC8C061E259" name="STOCK_PK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>E9A4CCAC-2881-C5F1-40B6-B7D29A5CBBB5</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A577A132-7E88-FAE7-472C-260CC4E4EF46"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D5649891-003D-1C2A-11ED-251736A7AC78" name="STOCK_PRODUCTOS_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>6CFAF7E5-B5AC-61AA-B8ED-3605E3629CCE</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="36AC1D45-5FF0-85D8-66FE-EDC751EC43BC"/>
+<colUsage columnID="B9659498-EBB9-B571-ADC6-884EE753B60F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="85AAEEE1-A6FA-E1BE-8F12-F563FFBC7766" name="STOCK_WAREHOUSE_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>52444096-6C00-1146-A02A-CBA7B37879AE</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8FB63DEA-A248-39E5-03E4-E08A766206F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

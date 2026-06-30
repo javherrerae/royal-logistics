@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import logistica.stock.model.Stock;
 import logistica.stock.service.StockServiceServ;
@@ -28,6 +30,11 @@ public class StockController {
 
     @Operation(summary = "Listar todo el stock",
                description = "Obtiene una lista de todo el stock registrado en el sistema, incluyendo productos, ubicaciones y cantidades")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping
     public ResponseEntity<List<Stock>> listarTodos() {
         return ResponseEntity.ok(service.listarTodos());
@@ -35,6 +42,11 @@ public class StockController {
 
     @Operation(summary = "Inicializar stock",
                description = "Registra un nuevo stock en el sistema. Si el SKU y la ubicación ya existen, se actualizará la cantidad existente.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Recurso registrado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos o regla de negocio incumplida"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @PostMapping("/inicializar")
     public ResponseEntity<Stock> inicializarStock(@RequestBody @NonNull Stock stock) {
         Stock nuevoStock = service.inicializarStock(stock);
@@ -43,6 +55,11 @@ public class StockController {
 
     @Operation(summary = "Registrar o actualizar stock",
                description = "Registra un nuevo stock en el sistema o incrementa las existencias si ya existe en la ubicación.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Recurso registrado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos o regla de negocio incumplida"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @PostMapping
     public ResponseEntity<?> registrarOActualizar(@RequestBody Stock stock) {
         try {
@@ -56,6 +73,11 @@ public class StockController {
 
     @Operation(summary = "Buscar stock por SKU",
                description = "Obtiene una lista de stock que coinciden con un SKU específico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/producto/sku/{sku}")
     public ResponseEntity<List<Stock>> buscarPorSku(@PathVariable String sku) {
         return ResponseEntity.ok(service.buscarPorSku(sku));
@@ -63,6 +85,11 @@ public class StockController {
 
     @Operation(summary = "Buscar stock por ubicación",
                description = "Obtiene una lista de stock que coinciden con una ubicación específica")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/ubicacion/{idUbicacion}")
     public ResponseEntity<List<Stock>> buscarPorUbicacion(@PathVariable String idUbicacion) {
         return ResponseEntity.ok(service.buscarPorUbicacion(idUbicacion));

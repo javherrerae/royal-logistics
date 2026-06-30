@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="30D6E14B-9BE5-8947-1542-89319C8695ED" name="PRODUCTOS">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-06 14:10:48 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="SKU" id="CD226E4E-F497-B990-56A7-61A7A96700E6">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-06 15:28:29 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_desconsolidacion" id="5F54F91A-E60D-6492-0B1E-D64787BA0919">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:45:58 UTC</createdTime>
+<generatorID>019F7057-731A-1185-42A3-C17634455BC0</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<referedAttribute>E25C033F-91DF-AE78-FBE3-DD1C1C3740A0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>100</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre_producto" id="DEC50040-BFBA-B476-6C16-AB892A0B1473">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-06 14:10:52 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="categoria" id="F9B5F563-7B4F-7E43-6765-A35DFFFCA1A1">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:11:11 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fec_caducidad" id="C574A59F-2934-4597-406D-106AC4A84BD2">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:10:48 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fec_fabricacion" id="2F8EF6F8-F0DD-2855-E117-F7F71F1764BD">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:11:03 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C5A46ACD-7849-24BD-0E06-FB2BFF4F9E41" name="PRODUCTOS PK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-06 14:11:08 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CD226E4E-F497-B990-56A7-61A7A96700E6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

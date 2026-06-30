@@ -1,0 +1,194 @@
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: autenticacion
+          uri: lb://autenticacion
+          predicates:
+            - "Path=/api/credenciales/**"
+
+        - id: producto
+          uri: lb://producto
+          predicates:
+            - "Path=/api/productos/**"
+
+        - id: creacion-usuario
+          uri: lb://creacion-usuario
+          predicates:
+            - "Path=/api/empleados/**"
+
+        - id: anden
+          uri: lb://anden
+          predicates:
+            - "Path=/api/andenes/**"
+
+        - id: camion
+          uri: lb://camion
+          predicates:
+            - "Path=/api/camiones/**"
+
+        - id: recepcion
+          uri: lb://recepcion
+          predicates:
+            - "Path=/api/recepciones/**"
+
+        - id: factura
+          uri: lb://factura
+          predicates:
+            - "Path=/api/facturas/**"
+
+        - id: desconsolidacion
+          uri: lb://desconsolidacion
+          predicates:
+            - "Path=/api/desconsolidaciones/**"
+
+        - id: warehouse
+          uri: lb://warehouse
+          predicates:
+            - "Path=/api/warehouse/**"
+
+        - id: stock
+          uri: lb://stock
+          predicates:
+            - "Path=/api/stock/**"
+
+        - id: movimiento
+          uri: lb://movimiento
+          predicates:
+            - "Path=/api/movimientos/**"
+
+        - id: recepcion-docs
+          uri: lb://recepcion
+          predicates:
+            - "Path=/recepcion/v3/api-docs"
+          filters:
+            - "RewritePath=/recepcion/v3/api-docs, /v3/api-docs"
+
+        - id: camion-docs
+          uri: lb://camion
+          predicates:
+            - "Path=/camion/v3/api-docs"
+          filters:
+            - "RewritePath=/camion/v3/api-docs, /v3/api-docs"
+
+        - id: anden-docs
+          uri: lb://anden
+          predicates:
+            - "Path=/anden/v3/api-docs"
+          filters:
+            - "RewritePath=/anden/v3/api-docs, /v3/api-docs"
+
+        - id: desconsolidacion-docs
+          uri: lb://desconsolidacion
+          predicates:
+            - "Path=/desconsolidacion/v3/api-docs"
+          filters:
+            - "RewritePath=/desconsolidacion/v3/api-docs, /v3/api-docs"
+
+        - id: factura-docs
+          uri: lb://factura
+          predicates:
+            - "Path=/factura/v3/api-docs"
+          filters:
+            - "RewritePath=/factura/v3/api-docs, /v3/api-docs"
+
+        - id: producto-docs
+          uri: lb://producto
+          predicates:
+            - "Path=/producto/v3/api-docs"
+          filters:
+            - "RewritePath=/producto/v3/api-docs, /v3/api-docs"
+
+        - id: warehouse-docs
+          uri: lb://warehouse
+          predicates:
+            - "Path=/warehouse/v3/api-docs"
+          filters:
+            - "RewritePath=/warehouse/v3/api-docs, /v3/api-docs"
+
+        - id: stock-docs
+          uri: lb://stock
+          predicates:
+            - "Path=/stock/v3/api-docs"
+          filters:
+            - "RewritePath=/stock/v3/api-docs, /v3/api-docs"
+
+        - id: movimiento-docs
+          uri: lb://movimiento
+          predicates:
+            - "Path=/movimiento/v3/api-docs"
+          filters:
+            - "RewritePath=/movimiento/v3/api-docs, /v3/api-docs"
+
+        - id: creacion-usuario-docs
+          uri: lb://creacion-usuario
+          predicates:
+            - "Path=/creacion-usuario/v3/api-docs"
+          filters:
+            - "RewritePath=/creacion-usuario/v3/api-docs, /v3/api-docs"
+
+        - id: autenticacion-docs
+          uri: lb://autenticacion
+          predicates:
+            - "Path=/autenticacion/v3/api-docs"
+          filters:
+            - "RewritePath=/autenticacion/v3/api-docs, /v3/api-docs"
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://localhost:8761/eureka"
+    register-with-eureka: true
+    fetch-registry: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway: DEBUG
+    com.netflix.eureka: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+    urls-primary-name: producto
+    urls:
+      - name: recepcion
+        url: /recepcion/v3/api-docs
+      - name: camion
+        url: /camion/v3/api-docs
+      - name: anden
+        url: /anden/v3/api-docs
+      - name: desconsolidacion
+        url: /desconsolidacion/v3/api-docs
+      - name: factura
+        url: /factura/v3/api-docs
+      - name: producto
+        url: /producto/v3/api-docs
+      - name: warehouse
+        url: /warehouse/v3/api-docs
+      - name: stock
+        url: /stock/v3/api-docs
+      - name: movimiento
+        url: /movimiento/v3/api-docs
+      - name: creacion-usuario
+        url: /creacion-usuario/v3/api-docs
+      - name: autenticacion
+        url: /autenticacion/v3/api-docs

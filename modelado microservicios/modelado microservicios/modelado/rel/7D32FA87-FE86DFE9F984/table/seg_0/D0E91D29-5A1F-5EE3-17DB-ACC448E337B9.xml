@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D0E91D29-5A1F-5EE3-17DB-ACC448E337B9" name="AUTENTICACION">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>87AA5CFB-3AF7-6E29-B50D-83DA1393D264</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="9F376BAB-0EBD-7595-7FEC-D80520D96184">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>7EE8B91E-E478-2B67-B884-D1066D0B3678</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usuario" id="78786FA0-449F-422B-809A-0F4FF091432E">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>6F97D412-71A4-23FC-26A4-17D7B0172804</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="9F8A5AAA-224D-97D4-94D9-A9CA39667B84">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>E7E62FE1-EB0B-2278-576D-CD081BAB1627</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="active" id="5F99D9EE-21BF-ADC1-8716-E5AE88C982EA">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>32506994-572C-27F3-F796-51EFA7689618</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DEB0D31A-4B45-6F2D-2F7A-F965051F1576" name="AUTENTICACION_PK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>5C97C17E-4CBA-CA37-993E-9ED3214A459C</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F376BAB-0EBD-7595-7FEC-D80520D96184"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="81721042-14BC-AB2E-BDC8-450E3403F429" containerWithKeyObject="04C61E6B-8F3A-E7DC-1145-D7542583CDBA" localFKIndex="B18B4162-7A7C-B461-DC5F-CD04A23EC52C" name="RECEPCION_CAMION_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>044F1A66-7048-269C-2938-E7FBD415BEBB</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<referredTableLongName>CAMION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>AEBAC7B2-A23B-B571-01BE-FE5A61C575D6</referredTableID>
+<keyObject>6B4C13DF-7211-4951-23C6-35F09F07EA2C</keyObject>
+<referredKeyID>6B4C13DF-7211-4951-23C6-35F09F07EA2C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>patente</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

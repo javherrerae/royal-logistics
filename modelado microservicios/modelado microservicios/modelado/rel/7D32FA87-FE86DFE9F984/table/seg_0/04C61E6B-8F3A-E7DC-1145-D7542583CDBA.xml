@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="04C61E6B-8F3A-E7DC-1145-D7542583CDBA" name="RECEPCION">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>7137A8C0-3633-B819-5479-B0C5F2BF525E</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_recepcion" id="07CDE0FC-74E3-DDAA-696A-31E5DAF47218">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>AA3C184B-D75C-395C-7924-F08901740073</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ANDEN_n_anden" id="85025298-5443-1704-51BA-A8186A4302A1">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>B137F4CE-C3CA-9E19-DA0E-F04F6E5A5CA6</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4A5AE753-8529-3E2B-E8B8-C4FC2EB03837" referredColumn="86227496-3C66-0BAC-1B10-F949ED4C94D1"/>
+</associations>
+</Column>
+<Column name="CAMION_patente" id="1383D9CC-780E-5DC7-6248-B9A5C463516B">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>1CE314D1-384E-9D43-4018-B6DFB0543773</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="81721042-14BC-AB2E-BDC8-450E3403F429" referredColumn="BC0FE819-515C-689A-901F-9AD6EC56B298"/>
+</associations>
+</Column>
+<Column name="fecha_hora_recepcion" id="D2984C8B-20E7-822A-CFFD-E15DEFC181E5">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>B897D0DE-C694-48E4-1960-D6EB4171905E</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estado" id="93008F41-3374-AC67-41D1-809DACAC77E5">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>FF325A8C-2893-87FB-649C-E123DDCB273F</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C8DB025C-ADA5-FA3C-3025-7603BC6C75C5" name="RECEPCION_PK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>10A73A92-6765-F5C1-4D38-E50659983B87</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="07CDE0FC-74E3-DDAA-696A-31E5DAF47218"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B18B4162-7A7C-B461-DC5F-CD04A23EC52C" name="RECEPCION_CAMION_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>044F1A66-7048-269C-2938-E7FBD415BEBB</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1383D9CC-780E-5DC7-6248-B9A5C463516B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FC7D04AE-B373-C10B-C7CE-CF8F66C2CE25" name="RECEPCION_ANDEN_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>EED4FDE2-5480-3F7F-EE33-405786F619F2</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="85025298-5443-1704-51BA-A8186A4302A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

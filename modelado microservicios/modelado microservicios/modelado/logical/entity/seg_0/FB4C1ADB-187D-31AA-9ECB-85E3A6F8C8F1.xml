@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FB4C1ADB-187D-31AA-9ECB-85E3A6F8C8F1" name="ANDEN">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-06 15:17:26 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="n_anden" id="21061177-60D8-4779-6095-D5D261F08E95">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-06 15:17:29 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estado" id="EB1BBD9A-5C19-8050-F359-1B03BA09A75A">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-06 15:20:21 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5306A5F1-647C-D8D1-B66F-CC6C84ECE018" name="ANDEN PK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-06 15:45:35 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>21061177-60D8-4779-6095-D5D261F08E95</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

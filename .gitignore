@@ -1,0 +1,8 @@
+# Ignorar archivos batch
+*.bat
+
+# Ignorar carpetas de compilación
+bin/
+obj/
+build/
+target/

@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FCACE080-4D80-AFDB-1A38-E7693AC5441C" name="FACTURA">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>F3ABCE98-1164-FDE1-B44B-5C4295A1D149</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="n_factura" id="F82D6CB2-0C4C-B98E-A522-21E08C309511">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>492D4DC3-AB23-2768-51E0-219FAE36CDFC</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECEPCION_id_recepcion" id="D4ABF06D-ED54-A3F1-96AF-E812A5B72A51">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>BCFDCBF8-8D37-190A-ABB6-B408AB94F374</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="99674191-AA0F-C200-A77E-68E59600254F" referredColumn="07CDE0FC-74E3-DDAA-696A-31E5DAF47218"/>
+</associations>
+</Column>
+<Column name="cant_cajas" id="8508F9FF-333F-F901-1D8C-1F06BFCC048F">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>C3CFFA2E-B286-DC05-780D-91CB17A98551</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="proveedor" id="95572B50-F99D-B4BB-F605-1372A731DA5C">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>9C933F9B-EC64-4A79-FA86-24506646B8E2</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9C17BF91-45C0-ABCA-67DE-C87CA2D863AE" name="FACTURA_PK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>AC6D6906-EF22-E9FC-CBB5-718662F51D7B</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F82D6CB2-0C4C-B98E-A522-21E08C309511"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EC523584-850F-AF88-426A-15C39693705F" name="FACTURA_RECEPCION_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>4CE1E542-E410-7DF9-8496-E727B31C1D31</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4ABF06D-ED54-A3F1-96AF-E812A5B72A51"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

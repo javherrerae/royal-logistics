@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="992168AF-3BC9-B282-E47D-8EBA5F58F6B0" name="MOVIMIENTO">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:36:52 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_movimiento" id="E0CDF028-AD30-1E25-4103-FA3CCE8FB04F">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:37:02 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_desconsolidacion" id="F68CC8F5-65FA-D6AE-F80E-FC5C3158C924">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:47:01 UTC</createdTime>
+<generatorID>22FACE3F-43DC-14EE-4BBE-B713816D9381</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<referedAttribute>E25C033F-91DF-AE78-FBE3-DD1C1C3740A0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>100</dataTypePrecision>
+<ownDataTypeParameters>,100,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SKU" id="BDB225F7-0C7A-1B1E-CDC3-8F9C3C7FC843">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:40:51 UTC</createdTime>
+<generatorID>1757CAD7-647D-7AF1-6A11-9DCF8A0A1816</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<referedAttribute>CD226E4E-F497-B990-56A7-61A7A96700E6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_ubicacion" id="0881FDE2-AB69-81B2-5CC1-CCA3DED5DB72">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:55:15 UTC</createdTime>
+<generatorID>27A78B3C-6266-1480-0CF3-0470E701B6F9</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<referedAttribute>D922FB1F-F3A9-1353-73F6-0AC5352BBD6B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>6,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_movimiento" id="CB41BF98-E7C2-33FA-459F-DFFD7ACFDE38">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:41:09 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cantidad" id="850D621C-EEDF-22BD-3376-B8BED2F96BA0">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:41:20 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="destino" id="C9142BB9-A462-4578-7D91-4722B4F81E55">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:42:55 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C016E9F8-A23E-D87C-D197-32C3CE6903B1" name="MOVIMIENTO PK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:37:16 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E0CDF028-AD30-1E25-4103-FA3CCE8FB04F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

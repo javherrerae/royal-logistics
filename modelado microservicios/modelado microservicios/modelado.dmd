@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modelado" id="029A67E0-0E0A-9017-33B7-9D970C6B3BFA" version="3.5">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-06 14:04:13 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>029A67E0-0E0A-9017-33B7-9D970C6B3BFA</designId>
+</OSDM_Design>

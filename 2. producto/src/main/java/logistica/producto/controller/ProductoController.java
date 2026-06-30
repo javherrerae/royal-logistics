@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import logistica.producto.model.Producto;
 import logistica.producto.service.ProductoService;
@@ -27,6 +29,11 @@ public class ProductoController {
 
     @Operation(summary = "Listar todos los productos",
                description = "Obtiene una lista de todos los productos registrados en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping
     public ResponseEntity<List<Producto>> listarTodos() {
         return ResponseEntity.ok(service.listarTodos());
@@ -34,6 +41,11 @@ public class ProductoController {
 
     @Operation(summary = "Buscar producto por SKU",
                description = "Obtiene un producto específico utilizando su SKU")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/sku/{sku}")
     public ResponseEntity<?> buscarPorSku(@PathVariable String sku) {
         Producto producto = service.buscarPorSku(sku);
@@ -46,6 +58,11 @@ public class ProductoController {
 
     @Operation(summary = "Registrar producto",
                description = "Registra un nuevo producto en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Recurso registrado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos o regla de negocio incumplida"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @PostMapping
     public ResponseEntity<?> registrar(@RequestBody Producto producto) {
         try {
@@ -60,6 +77,11 @@ public class ProductoController {
 
     @Operation(summary = "Buscar productos por categoría",
                description = "Obtiene una lista de productos que pertenecen a una categoría específica")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/categoria/{categoria}")
     public ResponseEntity<List<Producto>> buscarPorCategoria(
             @PathVariable String categoria) {
@@ -68,6 +90,11 @@ public class ProductoController {
 
     @Operation(summary = "Buscar productos por desconsolidación",
                description = "Obtiene una lista de productos que pertenecen a una desconsolidación específica")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/desconsolidacion/{idDesconsolidacion}")
     public ResponseEntity<List<Producto>> buscarPorDesconsolidacion(
             @PathVariable Long idDesconsolidacion) {
@@ -77,6 +104,11 @@ public class ProductoController {
 
     @Operation(summary = "Buscar productos por nombre",
                description = "Obtiene una lista de productos que coinciden con un nombre específico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/nombre/{nombreProducto}")
     public ResponseEntity<List<Producto>> buscarPorNombre(
             @PathVariable String nombreProducto) {
@@ -86,6 +118,12 @@ public class ProductoController {
 
     @Operation(summary = "Eliminar producto",
                description = "Elimina un producto específico del sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Recurso eliminado correctamente"),
+            @ApiResponse(responseCode = "400", description = "No se pudo eliminar por validación de negocio"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @DeleteMapping("/{sku}")
     public ResponseEntity<?> eliminar(@PathVariable String sku) {
         try {

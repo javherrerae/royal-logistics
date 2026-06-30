@@ -1,9 +1,0 @@
-logistica\producto\controller\ProductoController.class
-logistica\producto\service\ProductoService.class
-logistica\producto\client\StockFeignClient.class
-logistica\producto\dto\StockDTO.class
-logistica\producto\repository\ProductoRepository.class
-logistica\producto\client\DesconsolidacionClient.class
-logistica\producto\exception\GlobalExceptionHandler.class
-logistica\producto\model\Producto.class
-logistica\producto\ProductoApplication.class

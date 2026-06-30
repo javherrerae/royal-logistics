@@ -17,6 +17,8 @@ import com.example.recepcion.Model.Recepcion;
 import com.example.recepcion.Service.RecepcionService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "Gestión de Recepciones", description = "Endpoints para registrar, consultar y eliminar recepciones")
@@ -29,6 +31,11 @@ public class RecepcionController {
 
     @Operation(summary = "Listar todas las recepciones",
                description = "Obtiene una lista de todas las recepciones registradas en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping
     public ResponseEntity<List<Recepcion>> listarTodas() {
         return ResponseEntity.ok(service.listarTodas()); 
@@ -36,6 +43,11 @@ public class RecepcionController {
 
     @Operation(summary = "Buscar recepción por ID",
                description = "Obtiene una recepción específica utilizando su ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/id/{idRecepcion}")
     public ResponseEntity<?> buscarPorId(@PathVariable Long idRecepcion) {
         Recepcion recepcion = service.buscarPorId(idRecepcion);
@@ -50,6 +62,11 @@ public class RecepcionController {
 
     @Operation(summary = "Registrar recepción",
             description = "Registra una nueva recepción en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Recurso registrado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos o regla de negocio incumplida"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @PostMapping
     public ResponseEntity<?> registrar(@RequestBody Recepcion recepcion) {
         try {
@@ -66,6 +83,11 @@ public class RecepcionController {
 
     @Operation(summary = "Buscar recepciones por estado",
                description = "Obtiene una lista de recepciones filtradas por su estado")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/estado/{estado}")
     public ResponseEntity<List<Recepcion>> buscarPorEstado(@PathVariable String estado) {
         return ResponseEntity.ok(service.buscarPorEstado(estado));
@@ -73,6 +95,11 @@ public class RecepcionController {
 
     @Operation(summary = "Buscar recepciones por patente",
                description = "Obtiene una lista de recepciones filtradas por su patente")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/patente/{patente}")
     public ResponseEntity<List<Recepcion>> buscarPorPatente (@PathVariable String patente) {
         return ResponseEntity.ok(service.buscarPorPatente(patente));
@@ -80,6 +107,11 @@ public class RecepcionController {
 
     @Operation(summary = "Buscar recepciones por número de andén",
                description = "Obtiene una lista de recepciones filtradas por su número de andén")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/anden/{nAnden}")
     public ResponseEntity<List<Recepcion>> buscarPorAnden(@PathVariable Long nAnden) {
         return ResponseEntity.ok(service.buscarPorAnden(nAnden));
@@ -87,6 +119,12 @@ public class RecepcionController {
 
     @Operation(summary = "Eliminar recepción",
                 description = "Elimina una recepción específica del sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Recurso eliminado correctamente"),
+            @ApiResponse(responseCode = "400", description = "No se pudo eliminar por validación de negocio"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable Long id) {
         try {

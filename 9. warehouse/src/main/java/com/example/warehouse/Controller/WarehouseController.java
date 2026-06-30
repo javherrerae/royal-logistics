@@ -17,6 +17,8 @@ import com.example.warehouse.Model.Warehouse;
 import com.example.warehouse.Service.WarehouseService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "Gestión de Ubicaciones", description = "Endpoints para registrar, consultar y eliminar ubicaciones en la bodega")
@@ -29,6 +31,11 @@ public class WarehouseController {
 
     @Operation(summary = "Listar todas las ubicaciones",
                description = "Obtiene una lista de todas las ubicaciones registradas en la bodega")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping
     public ResponseEntity<List<Warehouse>> listarTodas() {
         return ResponseEntity.ok(service.listarTodas());
@@ -36,6 +43,11 @@ public class WarehouseController {
 
     @Operation(summary = "Buscar ubicación por ID de ubicación",
                description = "Obtiene una ubicación específica utilizando su ID de ubicación")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/ubicacion/{idUbicacion}")
     public ResponseEntity<?> buscarPorIdUbicacion(@PathVariable String idUbicacion) {
         Warehouse warehouse = service.buscarPorIdUbicacion(idUbicacion);
@@ -50,6 +62,11 @@ public class WarehouseController {
 
     @Operation(summary = "Registrar ubicación",
                description = "Registra una nueva ubicación en la bodega")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Recurso registrado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos o regla de negocio incumplida"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @PostMapping
     public ResponseEntity<?> registrar(
             @RequestBody Warehouse warehouse) {
@@ -66,6 +83,11 @@ public class WarehouseController {
 
     @Operation(summary = "Buscar ubicación por pasillo",
                description = "Obtiene una lista de ubicaciones que coinciden con un pasillo específico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/pasillo/{pasillo}")
     public ResponseEntity<List<Warehouse>> buscarPorPasillo(
             @PathVariable String pasillo) {
@@ -75,6 +97,11 @@ public class WarehouseController {
 
     @Operation(summary = "Buscar ubicación por rack",
                description = "Obtiene una lista de ubicaciones que coinciden con un rack específico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/rack/{rack}")
     public ResponseEntity<List<Warehouse>> buscarPorRack(
             @PathVariable String rack) {
@@ -84,6 +111,11 @@ public class WarehouseController {
 
     @Operation(summary = "Buscar ubicación por nivel",
                description = "Obtiene una lista de ubicaciones que coinciden con un nivel específico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/nivel/{nivel}")
     public ResponseEntity<List<Warehouse>> buscarPorNivel(
             @PathVariable Integer nivel) {
@@ -93,6 +125,12 @@ public class WarehouseController {
 
     @Operation(summary = "Eliminar ubicación",
                description = "Elimina una ubicación específica utilizando su ID de ubicación")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Recurso eliminado correctamente"),
+            @ApiResponse(responseCode = "400", description = "No se pudo eliminar por validación de negocio"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @DeleteMapping("/{idUbicacion}")
     public ResponseEntity<?> eliminar(
             @PathVariable String idUbicacion) {

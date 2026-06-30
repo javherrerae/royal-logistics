@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4A5AE753-8529-3E2B-E8B8-C4FC2EB03837" containerWithKeyObject="04C61E6B-8F3A-E7DC-1145-D7542583CDBA" localFKIndex="FC7D04AE-B373-C10B-C7CE-CF8F66C2CE25" name="RECEPCION_ANDEN_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>EED4FDE2-5480-3F7F-EE33-405786F619F2</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<referredTableLongName>ANDEN</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F52AFBC4-4026-17D0-AF3A-67D2DC8718AD</referredTableID>
+<keyObject>59165B37-FDBC-7735-368E-671BA691697F</keyObject>
+<referredKeyID>59165B37-FDBC-7735-368E-671BA691697F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>n_anden</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

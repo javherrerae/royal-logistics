@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="560BBF1A-B5F2-4ABA-8571-564B8E3A3348" containerWithKeyObject="F1B13CD7-7E33-AD3E-98FC-FECE0633B9BD" localFKIndex="AB7CF2CB-2788-C32D-259D-CA8566EE3ADB" name="DESCONSOLIDACION_FACTURA_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>311813A0-228B-5F83-1C23-876411A99EF9</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<referredTableLongName>FACTURA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FCACE080-4D80-AFDB-1A38-E7693AC5441C</referredTableID>
+<keyObject>9C17BF91-45C0-ABCA-67DE-C87CA2D863AE</keyObject>
+<referredKeyID>9C17BF91-45C0-ABCA-67DE-C87CA2D863AE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>n_factura</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,172 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="ED08BE6A-B995-3D9D-5FE2-047A52458538" name="MOVIMIENTO">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>992168AF-3BC9-B282-E47D-8EBA5F58F6B0</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_movimiento" id="4AC952D6-7805-3F0E-33E1-4FB8BFE12C44">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>E0CDF028-AD30-1E25-4103-FA3CCE8FB04F</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCONSOLIDACION_id_desconsolidacion" id="728AF01D-B0DF-3E7E-824D-41A73682762F">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>F68CC8F5-65FA-D6AE-F80E-FC5C3158C924</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>100</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="88491F61-E7BA-9129-F6CC-89D7CA10C0E3" referredColumn="E5F45D18-C242-04A7-4233-EA7D18EA021D"/>
+</associations>
+</Column>
+<Column name="PRODUCTOS_SKU" id="D39758DD-48D6-9B4D-5F66-2191C0209045">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>BDB225F7-0C7A-1B1E-CDC3-8F9C3C7FC843</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="57FD0DF0-2FBC-EE93-8623-02E2B89CBFB0" referredColumn="EFEBF6A1-E50E-D7C5-65A4-680912B04FD3"/>
+</associations>
+</Column>
+<Column name="WAREHOUSE_id_ubicacion" id="8BB1A2E5-D4F3-0C3F-5D51-ECE09374BDB3">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>0881FDE2-AB69-81B2-5CC1-CCA3DED5DB72</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9F66FC31-75A5-F0F1-14F4-8E0D13F2FD4D" referredColumn="CC4C2ADA-8E56-CD36-2691-ABE98DBA96AD"/>
+</associations>
+</Column>
+<Column name="PRODUCTOS_nombre_producto" id="F1C47A40-CCAE-B950-C488-F385B6D93039">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>CF94B30B-E902-B10D-0F3B-FF3AFFCEA649</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="57FD0DF0-2FBC-EE93-8623-02E2B89CBFB0" referredColumn="B7735FD4-3B1B-AFF3-ECE5-2460AF0786A9"/>
+</associations>
+</Column>
+<Column name="tipo_movimiento" id="AE52F91E-6BFC-250B-D5AA-A37AA81FD41E">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>CB41BF98-E7C2-33FA-459F-DFFD7ACFDE38</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantidad" id="A63CE2F5-D96B-5E9D-BA2C-BCC7C0E13ACA">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>850D621C-EEDF-22BD-3376-B8BED2F96BA0</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="destino" id="08DB01C9-8814-B842-3201-2DEDA5294A96">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>C9142BB9-A462-4578-7D91-4722B4F81E55</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DC03C2FF-9793-84BA-0D74-C697121318A1" name="MOVIMIENTO_PK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>C016E9F8-A23E-D87C-D197-32C3CE6903B1</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4AC952D6-7805-3F0E-33E1-4FB8BFE12C44"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="378E9399-7F36-5C9E-2442-28D0E27AB913" name="MOVIMIENTO_PRODUCTOS_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>1757CAD7-647D-7AF1-6A11-9DCF8A0A1816</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F1C47A40-CCAE-B950-C488-F385B6D93039"/>
+<colUsage columnID="D39758DD-48D6-9B4D-5F66-2191C0209045"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="689EBE03-7A07-450C-5E35-5167523D7AB9" name="MOVIMIENTO_DESCONSOLIDACION_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>22FACE3F-43DC-14EE-4BBE-B713816D9381</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="728AF01D-B0DF-3E7E-824D-41A73682762F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6004A20E-5B37-27A2-7934-DD9DC06B8EBA" name="MOVIMIENTO_WAREHOUSE_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>27A78B3C-6266-1480-0CF3-0470E701B6F9</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8BB1A2E5-D4F3-0C3F-5D51-ECE09374BDB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

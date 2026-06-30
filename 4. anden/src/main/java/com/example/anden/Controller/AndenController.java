@@ -15,6 +15,8 @@ import com.example.anden.Model.Anden;
 import com.example.anden.Service.AndenService;
     
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
@@ -31,6 +33,11 @@ public class AndenController {
 
     @Operation(summary = "Listar todos los andenes",
                description = "Obtiene una lista de todos los andenes registrados en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping
     public ResponseEntity<List<Anden>> listar() {
         List<Anden> andenes = andenService.listartodos();
@@ -39,6 +46,11 @@ public class AndenController {
 
     @Operation(summary = "Buscar andén por número",
                description = "Obtiene un andén específico utilizando su número")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/{nAnden}")
     public ResponseEntity<?> buscarPorNumero(@PathVariable Long nAnden) {
         Anden anden = andenService.buscarPorNumero(nAnden);
@@ -53,6 +65,11 @@ public class AndenController {
 
     @Operation(summary = "Registrar andén",
                description = "Registra un nuevo andén en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Recurso registrado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos o regla de negocio incumplida"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @PostMapping
     public ResponseEntity<Anden> crear(@Valid @RequestBody Anden anden) {
         if (anden == null) {

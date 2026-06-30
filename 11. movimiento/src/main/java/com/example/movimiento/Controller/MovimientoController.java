@@ -17,6 +17,8 @@ import com.example.movimiento.Model.Movimiento;
 import com.example.movimiento.Service.MovimientoService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "Gestión de Movimientos", description = "Endpoints para registrar, consultar y eliminar movimientos")
@@ -29,6 +31,11 @@ public class MovimientoController {
 
     @Operation(summary = "Listar todos los movimientos",
                description = "Obtiene una lista de todos los movimientos registrados en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping
     public ResponseEntity<List<Movimiento>> listarTodos() {
         return ResponseEntity.ok(service.listarTodos());
@@ -36,6 +43,11 @@ public class MovimientoController {
 
     @Operation(summary = "Registrar un movimiento",
                description = "Registra un nuevo movimiento en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Recurso registrado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos o regla de negocio incumplida"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @PostMapping
     public ResponseEntity<?> registrar(
             @RequestBody Movimiento movimiento) {
@@ -52,6 +64,11 @@ public class MovimientoController {
 
     @Operation(summary = "Buscar movimientos por SKU",
                description = "Obtiene una lista de movimientos que coinciden con un SKU específico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/sku/{sku}")
     public ResponseEntity<List<Movimiento>> buscarPorSku(
             @PathVariable String sku) {
@@ -64,6 +81,11 @@ public class MovimientoController {
 
     @Operation(summary = "Buscar movimientos por ubicación",
                description = "Obtiene una lista de movimientos que coinciden con una ubicación específica")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/ubicacion/{idUbicacion}")
     public ResponseEntity<List<Movimiento>> buscarPorUbicacion(
             @PathVariable String idUbicacion) {
@@ -73,6 +95,11 @@ public class MovimientoController {
 
     @Operation(summary = "Buscar movimientos por tipo de movimiento",
                description = "Obtiene una lista de movimientos que coinciden con un tipo de movimiento específico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/tipo/{tipoMovimiento}")
     public ResponseEntity<List<Movimiento>> buscarPorTipoMovimiento(
             @PathVariable String tipoMovimiento) {
@@ -82,6 +109,11 @@ public class MovimientoController {
 
     @Operation(summary = "Buscar movimientos por desconsolidación",
                description = "Obtiene una lista de movimientos que coinciden con una desconsolidación específica")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/desconsolidacion/{idDesconsolidacion}")
     public ResponseEntity<List<Movimiento>> buscarPorDesconsolidacion(
             @PathVariable Long idDesconsolidacion) {
@@ -92,6 +124,12 @@ public class MovimientoController {
 
     @Operation(summary = "Eliminar movimiento",
                description = "Elimina un movimiento específico del sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Recurso eliminado correctamente"),
+            @ApiResponse(responseCode = "400", description = "No se pudo eliminar por validación de negocio"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @DeleteMapping("/{idMovimiento}")
     public ResponseEntity<?> eliminar(
             @PathVariable Long idMovimiento) {

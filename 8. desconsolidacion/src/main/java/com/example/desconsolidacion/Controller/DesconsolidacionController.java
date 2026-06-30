@@ -17,6 +17,8 @@ import com.example.desconsolidacion.Model.Desconsolidacion;
 import com.example.desconsolidacion.Service.DesconsolidacionService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "Gestión de Desconsolidaciones", description = "Endpoints para registrar, consultar y eliminar desconsolidaciones")
@@ -29,6 +31,11 @@ public class DesconsolidacionController {
 
     @Operation(summary = "Listar todas las desconsolidaciones",
                description = "Obtiene una lista de todas las desconsolidaciones registradas en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping
     public ResponseEntity<List<Desconsolidacion>> listarTodas() {
         return ResponseEntity.ok(service.listarTodas());
@@ -36,6 +43,11 @@ public class DesconsolidacionController {
 
     @Operation(summary = "Buscar desconsolidación por ID",
                description = "Obtiene una desconsolidación específica utilizando su ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/{idDesconsolidacion}")
     public ResponseEntity<?> buscarPorId(@PathVariable Long idDesconsolidacion) {
         Desconsolidacion desconsolidacion = service.buscarPorId(idDesconsolidacion);
@@ -50,6 +62,11 @@ public class DesconsolidacionController {
 
     @Operation(summary = "Registrar desconsolidación",
                description = "Registra una nueva desconsolidación en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Recurso registrado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos o regla de negocio incumplida"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @PostMapping
     public ResponseEntity<?> registrar(
             @RequestBody Desconsolidacion desconsolidacion) {
@@ -66,6 +83,11 @@ public class DesconsolidacionController {
 
     @Operation(summary = "Buscar desconsolidación por número de factura",
                description = "Obtiene una lista de desconsolidaciones que coinciden con un número de factura específico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/factura/{numeroFactura}")
     public ResponseEntity<List<Desconsolidacion>> buscarPorFactura(
             @PathVariable String numeroFactura) {
@@ -75,6 +97,11 @@ public class DesconsolidacionController {
 
     @Operation(summary = "Buscar desconsolidaciones por cantidad de productos",
                description = "Obtiene una lista de desconsolidaciones que coinciden con una cantidad específica de productos")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/cantidad/{cantidadProductos}")
     public ResponseEntity<List<Desconsolidacion>>
     buscarPorCantidadProductos(
@@ -85,6 +112,12 @@ public class DesconsolidacionController {
 
     @Operation(summary = "Eliminar desconsolidación",
                description = "Elimina una desconsolidación específica utilizando su ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Recurso eliminado correctamente"),
+            @ApiResponse(responseCode = "400", description = "No se pudo eliminar por validación de negocio"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @DeleteMapping("/{idDesconsolidacion}")
     public ResponseEntity<?> eliminar(
             @PathVariable Long idDesconsolidacion) {

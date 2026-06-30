@@ -16,6 +16,8 @@ import com.example.camion.Model.Camion;
 import com.example.camion.Service.CamionService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
@@ -32,6 +34,11 @@ public class CamionController {
 
     @Operation(summary = "Listar todos los camiones",
                description = "Obtiene una lista de todos los camiones registrados en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping
     public ResponseEntity<List<Camion>> listar() {
         List<Camion> camiones = camionService.listarTodos();
@@ -40,6 +47,11 @@ public class CamionController {
 
     @Operation(summary = "Buscar camión por patente",
                description = "Obtiene un camión específico utilizando su patente")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada correctamente"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado cuando aplica la búsqueda por identificador"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @GetMapping("/patente/{patente}")
     public ResponseEntity<?> buscarPorPatente(@PathVariable String patente) {
         // Buscamos el camión en el servicio
@@ -55,6 +67,11 @@ public class CamionController {
 
     @Operation(summary = "Registrar camión",
                description = "Registra un nuevo camión en el sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Recurso registrado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos o regla de negocio incumplida"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @PostMapping
     public ResponseEntity<Camion> crear(@Valid @RequestBody Camion camion) {
         if (camion == null) {
@@ -68,6 +85,12 @@ public class CamionController {
 
     @Operation(summary = "Eliminar camión",
                description = "Elimina un camión específico del sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Recurso eliminado correctamente"),
+            @ApiResponse(responseCode = "400", description = "No se pudo eliminar por validación de negocio"),
+            @ApiResponse(responseCode = "404", description = "Recurso no encontrado"),
+            @ApiResponse(responseCode = "500", description = "Error interno del servidor")
+    })
     @DeleteMapping("/{patente}")
     public ResponseEntity<?> eliminarCamion(@PathVariable String patente) {
         boolean eliminado = camionService.eliminarCamionPorPatente(patente);

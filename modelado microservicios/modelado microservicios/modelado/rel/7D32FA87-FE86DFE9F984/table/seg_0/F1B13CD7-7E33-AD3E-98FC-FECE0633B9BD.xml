@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F1B13CD7-7E33-AD3E-98FC-FECE0633B9BD" name="DESCONSOLIDACION">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>5B8AC49E-82BF-3DE1-981B-FBFDD57DB9D4</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_desconsolidacion" id="E5F45D18-C242-04A7-4233-EA7D18EA021D">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>E25C033F-91DF-AE78-FBE3-DD1C1C3740A0</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>100</dataTypePrecision>
+<ownDataTypeParameters>,100,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FACTURA_n_factura" id="0070D060-FA60-4B1B-DD15-6459902685B3">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>3474190E-8789-1E8C-1D18-3F6C422175CC</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="560BBF1A-B5F2-4ABA-8571-564B8E3A3348" referredColumn="F82D6CB2-0C4C-B98E-A522-21E08C309511"/>
+</associations>
+</Column>
+<Column name="cantidad_productos" id="036A1491-3E26-23C8-3898-3F19E1202D86">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>E825DC9F-BDF6-87BB-99CA-6B6000F35379</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3B550F8B-5DB5-7060-B581-971B3F2E1674" name="DESCONSOLIDACION_PK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>30FAE0B1-680F-EAF6-EDF2-F6C837E338AB</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E5F45D18-C242-04A7-4233-EA7D18EA021D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AB7CF2CB-2788-C32D-259D-CA8566EE3ADB" name="DESCONSOLIDACION_FACTURA_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>311813A0-228B-5F83-1C23-876411A99EF9</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0070D060-FA60-4B1B-DD15-6459902685B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

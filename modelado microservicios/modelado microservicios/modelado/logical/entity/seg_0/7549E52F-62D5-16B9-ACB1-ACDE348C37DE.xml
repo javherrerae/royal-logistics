@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7549E52F-62D5-16B9-ACB1-ACDE348C37DE" name="STOCK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:49:27 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_stock" id="D0DDA5C8-FEA6-127C-CE6C-B7838F4D8EA7">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:49:33 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>100</dataTypePrecision>
+<ownDataTypeParameters>,100,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_ubicacion" id="9B298287-E867-E719-AE69-52AB4C8A6FB4">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:54:45 UTC</createdTime>
+<generatorID>52444096-6C00-1146-A02A-CBA7B37879AE</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<referedAttribute>D922FB1F-F3A9-1353-73F6-0AC5352BBD6B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>6,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SKU" id="52648E1A-D85D-C59C-8DB7-A62E80A18D17">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:52:21 UTC</createdTime>
+<generatorID>6CFAF7E5-B5AC-61AA-B8ED-3605E3629CCE</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<referedAttribute>CD226E4E-F497-B990-56A7-61A7A96700E6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cant_disponibles" id="C6795205-00C1-3FF5-09E0-10EA82EA6722">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:49:49 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>100</dataTypePrecision>
+<ownDataTypeParameters>,100,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E9A4CCAC-2881-C5F1-40B6-B7D29A5CBBB5" name="STOCK PK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-13 14:50:14 UTC</createdTime>
+<ownerDesignName>modelado</ownerDesignName>
+<engineerTo>
+<item key="7D32FA87-03D2-6159-7934-FE86DFE9F984" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D0DDA5C8-FEA6-127C-CE6C-B7838F4D8EA7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

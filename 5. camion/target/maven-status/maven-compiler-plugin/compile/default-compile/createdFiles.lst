@@ -1,5 +1,0 @@
-com\example\camion\CamionApplication.class
-com\example\camion\Controller\CamionController.class
-com\example\camion\Model\Camion.class
-com\example\camion\Repository\CamionRepository.class
-com\example\camion\Service\CamionService.class

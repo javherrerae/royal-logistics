@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9F66FC31-75A5-F0F1-14F4-8E0D13F2FD4D" containerWithKeyObject="ED08BE6A-B995-3D9D-5FE2-047A52458538" localFKIndex="6004A20E-5B37-27A2-7934-DD9DC06B8EBA" name="MOVIMIENTO_WAREHOUSE_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>27A78B3C-6266-1480-0CF3-0470E701B6F9</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<referredTableLongName>WAREHOUSE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>448B6431-DAEB-F826-DAC0-53E88543BD91</referredTableID>
+<keyObject>4832813F-5FB2-CF44-B179-64BB92D68083</keyObject>
+<referredKeyID>4832813F-5FB2-CF44-B179-64BB92D68083</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_ubicacion</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

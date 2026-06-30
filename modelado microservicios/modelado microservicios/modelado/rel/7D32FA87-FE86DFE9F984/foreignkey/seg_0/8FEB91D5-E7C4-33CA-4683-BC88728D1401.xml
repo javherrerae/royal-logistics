@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8FEB91D5-E7C4-33CA-4683-BC88728D1401" containerWithKeyObject="7D93D7F5-4262-88AA-0B23-B32F16EC7B10" localFKIndex="5CC610FC-229D-539F-DB96-04AE1057596C" name="PRODUCTOS_DESCONSOLIDACION_FK">
+<createdBy>AO-Alumno</createdBy>
+<createdTime>2026-05-15 14:50:55 UTC</createdTime>
+<generatorID>019F7057-731A-1185-42A3-C17634455BC0</generatorID>
+<ownerDesignName>modelado</ownerDesignName>
+<referredTableLongName>DESCONSOLIDACION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F1B13CD7-7E33-AD3E-98FC-FECE0633B9BD</referredTableID>
+<keyObject>3B550F8B-5DB5-7060-B581-971B3F2E1674</keyObject>
+<referredKeyID>3B550F8B-5DB5-7060-B581-971B3F2E1674</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_desconsolidacion</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,8 +1,0 @@
-com\example\movimiento\Repository\MovimientoRepository.class
-com\example\movimiento\Client\DesconsolidacionClient.class
-com\example\movimiento\Model\Movimiento.class
-com\example\movimiento\Service\MovimientoService.class
-com\example\movimiento\Controller\MovimientoController.class
-com\example\movimiento\Client\ProductoClient.class
-com\example\movimiento\Client\WarehouseClient.class
-com\example\movimiento\MovimientoApplication.class
